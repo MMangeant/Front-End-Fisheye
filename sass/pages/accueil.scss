@@ -4,18 +4,39 @@
     gap: 70px;
     margin-top: 100px;
     article {
-        justify-self: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        h2 {
-            color: $orange;
-            font-size: 36px;
+        a{
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h2 {
+                color: $orange;
+                font-size: 2.5em;
+                margin: 25px 0 15px 0;
+                font-weight: 400;
+                text-align: center;
+            }
+            img {
+                height: 200px;
+                width: 200px;
+                border-radius: 100px;
+                object-fit: cover;
+            }
         }
-        img {
-            height: 200px;
-            width: 200px;
+        .textPhotographer{
+            text-align: center;
+            h3{
+                font-size: 1.1em;
+                margin: 0;
+                color: $rouge;
+            }
+            p{
+                margin: 5px 0;
+            }
+            .pricePhotographer{
+                color: $gris;
+            }
         }
     }
 }

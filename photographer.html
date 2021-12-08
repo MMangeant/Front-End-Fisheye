@@ -12,9 +12,8 @@
       <img src="assets/images/logo.png" class="logo" />
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      <div class="photograph-header"></div>
+      <div class="photograph-medias"></div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
@@ -25,12 +24,29 @@
 				<form>
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input class="text-control" type="text" id="first" name="first"/><br>
 					</div>
+          <div>
+            <label>Nom</label><br>
+            <input class="text-control" type="text" id="last" name="last"/><br>
+          </div>
+          <div>
+            <label>Email</label><br>
+            <input class="text-control" id="email" name="email"/><br>
+          </div>
+          <div>
+            <label>Votre message</label><br>
+            <textarea id="message" name="message"></textarea><br>
+          </div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/factories/photographerPage.js"></script>
+    <script src="scripts/factories/mediaPhotographer.js"></script>
+    <!-- <script src="scripts/truc.js"></script> -->
   </body>
 </html>
