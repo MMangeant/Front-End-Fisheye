@@ -1,24 +1,25 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 function photographerPageFactory(data) {
-    const { name, id, city, country, tagline, portrait} = data;
-
-    const picture = `assets/photographers/${portrait}`;
-
-    function getUserCardDOM2() {
-        // const headerPhotographer = document.querySelector('.photograph-header');
-        
-        photographersHeader.innerHTML += `
-            <div class="textPhotographer">
-                <h2 class="namePhotographer">${name}</h2>
-                <h3 class="adressePhotographer">${city}, ${country}</h3>
-                <p class="taglinePhotographer">${tagline}</p>
-            </div>
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-            <div>
-                <img  class="portraitPhotographer" src="${picture}" alt="photographer photo">
-            </div>
-            `;
-
-        return photographersHeader;
-    }
-    return { name, picture, id, city, country, tagline, getUserCardDOM2 }
+  // eslint-disable-next-line object-curly-newline
+  const { name, id, city, country, tagline, portrait } = data;
+  const picture = `assets/photographers/${portrait}`;
+  function getUserCardDOM2() {
+    // const headerPhotographer = document.querySelector('.photograph-header');
+    photographersHeader.innerHTML += `
+      <div class="textPhotographer">
+        <h2 class="namePhotographer">${name}</h2>
+        <h3 class="adressePhotographer">${city}, ${country}</h3>
+        <p class="taglinePhotographer">${tagline}</p>
+      </div>
+      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <div>
+        <img  class="portraitPhotographer" src="${picture}" alt="photographer photo">
+      </div>
+    `;
+    return photographersHeader;
+  }
+  // eslint-disable-next-line object-curly-newline
+  return { name, picture, id, city, country, tagline, getUserCardDOM2 };
 }

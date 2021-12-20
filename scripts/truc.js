@@ -1,4 +1,7 @@
-
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 // const voilaPromise = new Promise(function PromS(resolve, reject) {
 //     setTimeout(() => {
 //         //console.log('me voici !');
@@ -8,46 +11,39 @@
 
 // })
 
-
 // async await
 
-function maReponse(){
-    let result = voilaPromise();
-    console.log(result);
+function maReponse() {
+  const result = voilaPromise();
+  console.log(result);
 }
 
- function getDataTruc(){
-   return fetch("./data/photographers.json")
-    .then(res => res.json())
+function getDataTruc() {
+  return fetch('./data/photographers.json')
+    .then((res) => res.json());
 }
 // function getDataTruc(){
 //     return fetch("./data/photographers.json")
 //      .then(res => {
 //          if(res.ok){
 //            return res.json();
-//          }   
-//          else throw new Error('something went wrong')  
+//          }
+//          else throw new Error('something went wrong')
 //      });
 //  }
- 
 
 async function start() {
-    let data = await getDataTruc();
-    console.log(data);
-    console.log('bonjour');
+  const data = await getDataTruc();
+  console.log(data);
+  console.log('bonjour');
 }
 
 start();
 
-
-
-
 a = true;
-if(a) console.log('yess');
+if (a) console.log('yess');
 else console.log('nonononono');
 // let t = ['orange', 'kiwi'];
-
-
 
 // t.forEach(fruit => console.log(fruit));
 
@@ -64,8 +60,6 @@ else console.log('nonononono');
 //     .then(function(ser){
 //         console.log(ser);
 //     })
-    
-    
 
 //     // setTimeout(() => {
 //     //     console.log('me voici !');

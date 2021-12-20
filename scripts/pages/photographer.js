@@ -1,46 +1,52 @@
-//Mettre le code JavaScript lié à la page photographer.html
+// Mettre le code JavaScript lié à la page photographer.html
 
-/*récup paramètre id de la page de photographe*/
-let urlEl = new URLSearchParams(window.location.search);
-let idUrl = urlEl.get("id");
+/* récup paramètre id de la page de photographe */
+const urlEl = new URLSearchParams(window.location.search);
+// eslint-disable-next-line prefer-const
+let idUrl = urlEl.get('id');
 
 async function displayDataPage(photographers) {
-    const photographersHeader = document.querySelector(".photograph-header");
-    photographers.filter(photographer => photographer.id == idUrl).forEach((photographer) => {
-        const photographerPageModel = photographerPageFactory(photographer);
-        const userCardDOM2 = photographerPageModel.getUserCardDOM2();
-        photographersHeader.appendChild(userCardDOM2);
-    });
-};
+  const photographersHeader = document.querySelector('.photograph-header');
+  // eslint-disable-next-line eqeqeq
+  photographers.filter((photographer) => photographer.id == idUrl).forEach((photographer) => {
+    // eslint-disable-next-line no-undef
+    const photographerPageModel = photographerPageFactory(photographer);
+    const userCardDOM2 = photographerPageModel.getUserCardDOM2();
+    photographersHeader.appendChild(userCardDOM2);
+  });
+}
 
 async function displayMedias(medias) {
-    const photographerMedias = document.querySelector(".photograph-medias");
-    medias.filter(media => media.photographerId == idUrl).forEach((media) => {
-        const mediaModel = mediaFactory(media);
-        const userCardDOM3 = mediaModel.getUserCardDOM3();
-        photographerMedias.appendChild(userCardDOM3);
-        
-    });
-};
+  const photographerMedias = document.querySelector('.photograph-medias');
+  // eslint-disable-next-line eqeqeq
+  medias.filter((media) => media.photographerId == idUrl).forEach((media) => {
+    // eslint-disable-next-line no-undef
+    const mediaModel = mediaFactory(media);
+    const userCardDOM3 = mediaModel.getUserCardDOM3();
+    photographerMedias.appendChild(userCardDOM3);
+  });
+}
 
 async function displayEncartBas(photographers) {
-    const encartBas = document.querySelector(".encart-bas");
-    photographers.filter(photographer => photographer.id == idUrl).forEach((photographer) => {
-        const encartModel = totalLikesFactory(photographer);
-        const userCardDOM4 = encartModel.getUserCardDOM4();
-        encartBas.appendChild(userCardDOM4);
-    });
-};
-
-
+  const encartBas = document.querySelector('.encart-bas');
+  // eslint-disable-next-line eqeqeq
+  photographers.filter((photographer) => photographer.id == idUrl).forEach((photographer) => {
+    // eslint-disable-next-line no-undef
+    const encartModel = totalLikesFactory(photographer);
+    const userCardDOM4 = encartModel.getUserCardDOM4();
+    encartBas.appendChild(userCardDOM4);
+  });
+}
 
 async function initPage() {
-    // Récupère les datas des photographes
-    const { photographers, media } = await getPhotographers();
-    displayDataPage(photographers);
-    displayMedias(media);
-    displayEncartBas( photographers);
-    console.log(media);
-};
+  // Récupère les datas des photographes
+  // eslint-disable-next-line no-undef
+  const { photographers, media } = await getPhotographers();
+  displayDataPage(photographers);
+  displayMedias(media);
+  displayEncartBas(photographers);
+  // eslint-disable-next-line no-console
+  console.log(media);
+}
 
 initPage();
