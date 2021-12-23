@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 
 // eslint-disable-next-line no-unused-vars
-function totalLikesFactory(data) {
+function encartBasFactory(data) {
   // eslint-disable-next-line object-curly-newline
   const { id, photographerId, likes, price } = data;
 

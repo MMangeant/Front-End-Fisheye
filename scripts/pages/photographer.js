@@ -32,7 +32,7 @@ async function displayEncartBas(photographers) {
   // eslint-disable-next-line eqeqeq
   photographers.filter((photographer) => photographer.id == idUrl).forEach((photographer) => {
     // eslint-disable-next-line no-undef
-    const encartModel = totalLikesFactory(photographer); 
+    const encartModel = encartBasFactory(photographer); 
     const userCardDOM4 = encartModel.getUserCardDOM4();
     // encartBas.appendChild(userCardDOM4); // ?????? //
   });
@@ -55,3 +55,4 @@ async function initPage() {
 }
 
 initPage();
+
