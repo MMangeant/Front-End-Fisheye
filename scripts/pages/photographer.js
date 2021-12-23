@@ -12,7 +12,7 @@ async function displayDataPage(photographers) {
     // eslint-disable-next-line no-undef
     const photographerPageModel = photographerPageFactory(photographer);
     const userCardDOM2 = photographerPageModel.getUserCardDOM2();
-    photographersHeader.appendChild(userCardDOM2);
+    // photographersHeader.appendChild(userCardDOM2); // ?????? //
   });
 }
 
@@ -32,10 +32,14 @@ async function displayEncartBas(photographers) {
   // eslint-disable-next-line eqeqeq
   photographers.filter((photographer) => photographer.id == idUrl).forEach((photographer) => {
     // eslint-disable-next-line no-undef
-    const encartModel = totalLikesFactory(photographer);
+    const encartModel = totalLikesFactory(photographer); 
     const userCardDOM4 = encartModel.getUserCardDOM4();
-    encartBas.appendChild(userCardDOM4);
+    // encartBas.appendChild(userCardDOM4); // ?????? //
   });
+}
+
+function bonjour() {
+  console.log("amazziiiiiiing")
 }
 
 async function initPage() {
@@ -44,9 +48,10 @@ async function initPage() {
   const { photographers, media } = await getPhotographers();
   displayDataPage(photographers);
   displayMedias(media);
-  displayEncartBas(photographers);
+  displayEncartBas(photographers, media);
   // eslint-disable-next-line no-console
-  console.log(media);
+  // console.log(media);
+  // amazing();
 }
 
 initPage();

@@ -164,6 +164,10 @@ form textarea {
   object-fit: cover;
 }
 
+.heart {
+  width: 20px;
+}
+
 .photograph-medias {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -199,9 +203,6 @@ form textarea {
   font-size: 1.2em;
   font-weight: bold;
 }
-.photograph-medias > div .heart {
-  width: 20px;
-}
 .photograph-medias > div .photosPhotograph {
   margin-top: 20px;
   display: grid;
@@ -230,6 +231,7 @@ form textarea {
 .encart-bas .heart {
   position: absolute;
   margin-left: 7px;
+  padding-top: 3px;
 }
 
 .triPhotos select {

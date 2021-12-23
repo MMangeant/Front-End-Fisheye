@@ -11,7 +11,7 @@ function mediaFactory(data) {
         <a class="lienPhoto" href="${picture}" alt="" data-idmedia="${id}">
           <img class="imgPhoto" src="${picture}" alt="photo" data-type="img"></img>
         </a>`;
-    }
+    } 
     return `
       <a class="lienPhoto" href="${pictureVideo}" alt="" data-idmedia="${id}">
         <video class="imgPhoto" src="${pictureVideo}" alt="video" data-type="video"></video>
@@ -25,8 +25,8 @@ function mediaFactory(data) {
         <div class="textPhoto">
           <h3 class="nomPhoto">${title}</h3>
             <button class="likesPhoto" data-idmedia="${id}" data-likes="${likes}">
-              <span class="nbLikes">${likes}</span>
-                <img class="heart" src="assets/icons/heart.svg" alt="">
+              <span class="nbLikes nb${id}">${likes}</span>
+              <img class="heart heart-likes" src="assets/icons/heart.svg" alt="" data-likes="${likes}" data-idmedia="${id}" onclick="calculCoeur(${id})">
             </button>
         </div>
       </div>
@@ -35,4 +35,5 @@ function mediaFactory(data) {
   }
   // eslint-disable-next-line object-curly-newline
   return { title, likes, id, date, image, getUserCardDOM3 };
+  
 }
