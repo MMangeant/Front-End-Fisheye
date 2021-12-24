@@ -42,7 +42,7 @@
 .photograph-medias {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    gap: 30px 70px;
     margin-top: 25px;
     >div{
         .lienPhoto{

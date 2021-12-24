@@ -27,6 +27,14 @@ async function displayMedias(medias) {
   });
 }
 
+// async function displayMediasTri(medias) {
+//   medias.filter((media) => media.photographerId == idUrl).forEach((media) => {
+//     const mediaModel = mediaFilterFactory(media);
+//     const userCardDOM3Tri = mediaModel.getUserCardDOM3Tri();
+//     photographerMedias.appendChild(userCardDOM3Tri);
+//   });
+// }
+
 async function displayEncartBas(photographers) {
   const encartBas = document.querySelector('.encart-bas');
   // eslint-disable-next-line eqeqeq
@@ -38,9 +46,10 @@ async function displayEncartBas(photographers) {
   });
 }
 
-function bonjour() {
-  console.log("amazziiiiiiing")
-}
+// function bonjour() {
+//   console.log("amazziiiiiiing")
+// }
+
 
 async function initPage() {
   // Récupère les datas des photographes
@@ -52,6 +61,8 @@ async function initPage() {
   // eslint-disable-next-line no-console
   // console.log(media);
   // amazing();
+  // displayMediasTri(media);
+  lightbox();
 }
 
 initPage();

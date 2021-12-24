@@ -173,7 +173,7 @@ form textarea {
 .photograph-medias {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
+  gap: 30px 70px;
   margin-top: 25px;
 }
 .photograph-medias > div .lienPhoto img, .photograph-medias > div .lienPhoto video {
@@ -247,6 +247,58 @@ form textarea {
 }
 .triPhotos select option {
   padding: 20px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  display: none;
+}
+.lightbox button {
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  z-index: 11;
+}
+.lightbox__prev, .lightbox__next {
+  background: url(icons/arrow.svg) center center/100% 100% no-repeat;
+  width: 30px;
+  height: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  transform: rotate(180deg);
+}
+.lightbox__prev {
+  right: auto;
+  left: 20px;
+  transform: rotate(0);
+}
+.lightbox__close {
+  background: url(icons/close-red.svg) center center/100% 100% no-repeat;
+  width: 42px;
+  height: 42px;
+  right: 20px;
+  top: 20px;
+}
+.lightbox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.lightbox__photo {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  max-height: 90%;
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=style.css.map */
