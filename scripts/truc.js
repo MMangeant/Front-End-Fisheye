@@ -1,67 +1,43 @@
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-// const voilaPromise = new Promise(function PromS(resolve, reject) {
-//     setTimeout(() => {
-//         //console.log('me voici !');
-//         let returny = resolve('345');
-//         console.log(returny);
-//         }, 2000);
 
-// })
 
-// async await
 
-function maReponse() {
-  const result = voilaPromise();
-  console.log(result);
-}
+let objetsTris = [
+  {
+    "title": "Aashion Yellow Beach",
+    "likes": 62,
+    "date": "2012-12-08",
+  },
+  {
+    "title": "Hashion Urban Jungle",
+    "likes": 11,
+    "date": "2011-11-06",
+  },
+  {
+    "title": "Zashion Pattern on a Pattern",
+    "likes": 72,
+    "date": "2013-08-12",
+  }]
 
-function getDataTruc() {
-  return fetch('./data/photographers.json')
-    .then((res) => res.json());
-}
-// function getDataTruc(){
-//     return fetch("./data/photographers.json")
-//      .then(res => {
-//          if(res.ok){
-//            return res.json();
-//          }
-//          else throw new Error('something went wrong')
-//      });
-//  }
+  
+  objetsTris.sort(function(a, b) {
+    return a.likes - b.likes;
+  });
 
-async function start() {
-  const data = await getDataTruc();
-  console.log(data);
-  console.log('bonjour');
-}
+  objetsTris.sort(function(a, b){
+    let dateA = new Date(a.date), dateB = new Date(b.date);
+    return dateA - dateB;
+});
 
-start();
+objetsTris.sort((a, b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+  if (a.title > b.title) {
+    return 1;
+  } 
+  return 0;
+});
 
-a = true;
-if (a) console.log('yess');
-else console.log('nonononono');
-// let t = ['orange', 'kiwi'];
 
-// t.forEach(fruit => console.log(fruit));
 
-// function getDataTruc(){
-//     fetch("./data/photographers.json")
-//     .then(function(res, error){
-//         console.log(res);
-//         return res.json();
-//     })
-//     .then(function(res){
-//         console.log(res);
-//         return res.media;
-//     })
-//     .then(function(ser){
-//         console.log(ser);
-//     })
-
-//     // setTimeout(() => {
-//     //     console.log('me voici !');
-//     //   }, 2000);
-// }
+  console.table(objetsTris);

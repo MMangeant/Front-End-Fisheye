@@ -21,26 +21,33 @@ function lightbox(){
       lightbox.style.display = "none";
   });
   
+  // console.log(lienImg)
+//   const isLargeNumber = (element) => element;
+//   console.log(lienImg.findIndex(isLargeNumber));
+
   lienImg.forEach(image =>{
       image.addEventListener('click', function(e){
           e.preventDefault(); 
           lightbox.style.display="block";
           imgLightbox.src = this.href;
-          console.log(this)
+          console.log(this);
+        //   console.log(this.indexOf());
+        //   console.log((lienImg.indexOf(this), this))
+        //   console.log(lienImg.findIndex(this))
           // console.log(this.closest("a > a"))
           // console.log(this.siblings)
           // console.log(this.currentNode)
-          // console.log(this.nextSibling) 
+        //   console.log(this.nextSibling) 
           this.classList.toggle("activeImg");
           
-          let imgPrevious = document.querySelector('.activeImg').parentNode.previousElementSibling.querySelector('a');
+          let imgPrevious = document.querySelector('.activeImg');
           let imgNext = document.querySelector('.activeImg').parentNode.nextElementSibling.querySelector('a');
-          
+
           prevArrow.addEventListener("click", function(e){
               document.querySelector('.activeImg').classList.toggle("activeImg");
               imgLightbox.src = imgPrevious.href; 
               // imgNext.classList.toggle("activeImg");
-              console.log(imgPrevious);
+              console.log("imgPrevious");
               // imgPrevious.toggle("activeImg");
           });
            
@@ -50,6 +57,8 @@ function lightbox(){
           });
       })
   })
+
+
 
 
 }

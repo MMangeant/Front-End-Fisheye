@@ -51,6 +51,7 @@ async function displayEncartBas(photographers) {
 // }
 
 
+
 async function initPage() {
   // Récupère les datas des photographes
   // eslint-disable-next-line no-undef
@@ -61,9 +62,74 @@ async function initPage() {
   // eslint-disable-next-line no-console
   // console.log(media);
   // amazing();
-  // displayMediasTri(media);
   lightbox();
+  // document.querySelector('#selectTris').addEventListener('change', clickTri(this.value, media))
+  // document.querySelector('#selectTris').addEventListener('change', function(e){
+  //   console.log(this.value);
+  //   console.log(media);
+  //   console.log(media.sort(function(a, b) {
+  //     return a.likes - b.likes;
+  //   }));
+  // })
+  document.querySelector('#selectTris').addEventListener('change', function(e){
+    if (this.value === 'popularite') {
+          const resultLikes = media.sort(function(a, b) {
+            return a.likes - b.likes;
+          });
+          photographerMedias.innerHTML='';
+          displayMedias(resultLikes)
+          console.log('pop');
+          console.log(resultLikes);
+    } 
+    else if (this.value === 'date'){
+          const resultDate = media.sort(function(a, b){
+            let dateA = new Date(a.date), dateB = new Date(b.date);
+            return dateA - dateB;
+          });
+          photographerMedias.innerHTML='';
+          displayMedias(resultDate)
+          console.log('date');
+          console.log(resultDate);
+    }
+    else if(this.value === 'titre'){
+          const resultTitle = media.sort((a, b) => {
+            if (a.title < b.title) {
+              return -1;
+            }
+            if (a.title > b.title) {
+              return 1;
+            } 
+            return 0;
+          });
+          photographerMedias.innerHTML='';
+          displayMedias(resultTitle)
+          console.log('title');
+          console.log(resultTitle);
+    }
+    else{
+          displayMedias(media); //affiche les medias
+          console.log('else')
+          // console.log(motcle)
+    }
+  })
+  
+  
 }
 
 initPage();
+
+// function detri(media){
+  //let mediatrier =  sort(a-b)
+ ///displayMedias(mediatrier); affiche les medias
+// } 
+
+// let dropdown document.queryselector('zdz).addeventlistenr('change', detriyeajh(this.value, data) )
+
+// function test(a,b){
+
+//   console.log('motcler vaut : ', a);
+//   console.log('media vaut : ', b);
+//   }
+
+
 
