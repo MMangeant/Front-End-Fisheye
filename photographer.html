@@ -18,9 +18,12 @@
         Trier par 
         <select name="" id="selectTris">
           <option value="default">...</option>
-          <option value="popularite">Popularité</option>
-          <option value="date">Date</option>
+          <option value="popularite" class="line">Popularité</option>
+          <optgroup label="___________"></optgroup>
+          <option value="date" class="line">Date</option>
+          <optgroup label="___________"></optgroup>
           <option value="titre">Titre</option>
+          <optgroup label="   "></optgroup>
         </select>
       </div>
       
@@ -28,7 +31,14 @@
 
       <div class="encart-bas"></div>
 
-      <div class="lightbox"></div>
+      <div class="lightbox">
+        <button class="lightbox__close" onclick="lightbox('close')"></button>
+        <button class="lightbox__prev" onclick="lightbox('prev')"></button>
+        <button class="lightbox__next" onclick="lightbox('next')"></button>
+        <div class="lightbox__container">
+          <img class="lightbox__photo" src="" alt="">
+        </div>
+      </div>
 
     </main>
     <div id="contact_modal">

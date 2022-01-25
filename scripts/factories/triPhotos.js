@@ -9,20 +9,16 @@ function clickTri(motcle, data ){
     const resultLikes = data.sort(function (a, b) {
       return a.likes - b.likes;
     });
-    photographerMedias.innerHTML = '';
-    displayMedias(resultLikes)
-    console.log('pop');
-    console.log(resultLikes);
+    
+    displayMedias(resultLikes);
   }
   else if (motcle === 'date') {
     const resultDate = data.sort(function (a, b) {
       let dateA = new Date(a.date), dateB = new Date(b.date);
       return dateA - dateB;
     });
-    photographerMedias.innerHTML = '';
-    displayMedias(resultDate)
-    console.log('date');
-    console.log(resultDate);
+    
+    displayMedias(resultDate);
   }
   else if (motcle === 'titre') {
     const resultTitle = data.sort((a, b) => {
@@ -34,10 +30,8 @@ function clickTri(motcle, data ){
       }
       return 0;
     });
-    photographerMedias.innerHTML = '';
-    displayMedias(resultTitle)
-    console.log('title');
-    console.log(resultTitle);
+    
+    displayMedias(resultTitle);
   }
   else {
     displayMedias(media); //affiche les medias

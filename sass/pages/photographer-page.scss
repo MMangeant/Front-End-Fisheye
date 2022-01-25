@@ -45,15 +45,33 @@
     gap: 30px 70px;
     margin-top: 25px;
     >div{
-        .lienPhoto{
+      
+        .container-img{
+          position: relative;
+          cursor: pointer;
             img, video{
                 width: 100%;
                 height: 300px;
                 border-radius: 5px;
                 object-fit: cover;
+                transition: all .2s ease-in-out;
+                margin-bottom: -5px;
+                &:hover{
+                  transform: scale(0.98);
+                  transition: all .2s ease-in-out;
+                }
+                &:before{
+                  content: '';
+                  background-color: $rouge;
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  mix-blend-mode: hue;
+                  border-radius: 5px;
+                }
             }
         }
-        
         .textPhoto{
             display: flex;
             justify-content: space-between;
@@ -92,8 +110,20 @@
             width: 350px;
             margin: 15px auto;
             display: inline-block;
-            
+
+            .heart{ 
+              transition: all .5s ease-in-out;
+              &:hover{
+               transform: scale(1.3);
+               transition: all .5s ease-in-out;
+              }
+              &:active{
+                opacity: 0.5;
+                transform: scale(0.7);
+              }
+            }
         }
+
     }
 }
 
@@ -126,11 +156,24 @@
         color: $blanc;
         border:none;
         margin-top: 25px;
+        optgroup{
+          border-bottom: 3px solid white;
+        }
         option{
             padding: 20px;
+            border-top: 1px solid col(blanc);
+            &:hover{
+              background: none;
+            }
+            .line{
+              border-bottom: 3px solid white;
+              z-index: 100;
+              
+            }
         }
     }
 }
+
 
 
 

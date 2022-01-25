@@ -1,26 +1,73 @@
-function lightbox() {
 
+const prevArrow = document.querySelector('.lightbox__prev');
+const nextArrow = document.querySelector('.lightbox__next');
+
+let imgCurrent;
+let idImgCurrent;
+
+function lightbox(param) {
+  console.log(param);
   const lightbox = document.querySelector('.lightbox');
+  let imgLightbox = document.querySelector('.lightbox__container img');
+  const allImgsTable = Array.from(document.querySelectorAll('.container-img img,.container-img video'));
+  console.log(allImgsTable);
 
-  lightbox.innerHTML += `
-      <button class="lightbox__close"></button>
-      <button class="lightbox__prev"></button>
-      <button class="lightbox__next"></button>
-      <div class="lightbox__container"><img class="lightbox__photo" src="" alt=""></div>
-  `;
+  if(param === "close"){
+    closeLightbox();
+  }
+  else if(param === "prev"){
+    previousIMG();
+  }
+  else if(param === "next"){
+    nextIMG();
+  }
+  else{
+    let imgClicked= param.querySelector("img,video");
+    imgCurrent = imgClicked;
+    imgLightbox.src = imgCurrent.src;
+    idImgCurrent = allImgsTable.indexOf(imgCurrent);
+    lightbox.style.display="block";
+  }
 
-  const lienImgs = document.querySelectorAll('.lienPhoto');
-  const lienImgsTable = Array.from(lienImgs);
+  function closeLightbox(){
+    lightbox.style.display = "none";
+  }
+
+  function previousIMG(){
+    idImgCurrent = allImgsTable.indexOf(imgCurrent)-1;
+    imgCurrent = allImgsTable[idImgCurrent];
+    imgLightbox.src = allImgsTable[idImgCurrent].src;
+
+    // if (idImgCurrent == 0) {
+    //   prevArrow.style.display = "none";
+    // }
+    // else{
+    //   prevArrow.style.display = "block";
+    // }
+
+  }
+  
+  function nextIMG(){
+    idImgCurrent = allImgsTable.indexOf(imgCurrent)+1;
+    imgCurrent = allImgsTable[idImgCurrent];
+    imgLightbox.src = allImgsTable[idImgCurrent].src;
+
+    // if (idImgCurrent >= allImgsTable.length - 1) {
+    //   nextArrow.style.display = "none";
+    // }
+    // else{
+    //   nextArrow.style.display = "block";
+
+    // }
+
+  }
+
+ 
   const contLightbox = document.querySelector('.lightbox__container');
-  const imgLightbox = document.querySelector('.lightbox__container img');
 
   const crossLightbox = document.querySelector(".lightbox__close");
-  const prevArrow = document.querySelector('.lightbox__prev');
-  const nextArrow = document.querySelector('.lightbox__next');
+  
 
-  crossLightbox.addEventListener("click", function () {
-    lightbox.style.display = "none";
-  });
 
   // lienImgsTable.forEach(image =>{
 
@@ -47,49 +94,79 @@ function lightbox() {
   //     })
   // })
 
-  for (let i = 0; i < lienImgsTable.length; i++) {
-    let newIndex = i; //passing i value to newIndex variable
-    let clickedImgIndex; //creating new variable
-    lienImgsTable[i].onclick = (e) => {
-      e.preventDefault();
-      lightbox.style.display = "block";
-      clickedImgIndex = i; //passing cliked image index to created variable (clickedImgIndex)
-      function preview() {
-        let imageURL = lienImgsTable[newIndex].querySelector("img").src; //getting user clicked img url
-        imgLightbox.src = imageURL; //passing user clicked img url in previewImg src
-      }
-      preview(); //calling above function
 
-      if (newIndex == 0) {
-        prevArrow.style.display = "none";
-      }
-      if (newIndex >= lienImgsTable.length - 1) {
-        nextArrow.style.display = "none";
-      }
-      prevArrow.onclick = () => {
-        newIndex--; //decrement index
-        if (newIndex == 0) {
-          preview();
-          prevArrow.style.display = "none";
-        } else {
-          preview();
-          nextArrow.style.display = "block";
-        }
-      }
-      nextArrow.onclick = () => {
-        newIndex++; //increment index
-        if (newIndex >= lienImgsTable.length - 1) {
-          preview();
-          nextArrow.style.display = "none";
-        } else {
-          preview();
-          prevArrow.style.display = "block";
-        }
-      }
+  // lienImgsTable.forEach(function(image, index){
+  //   let newIndex = index;
+  //   let clickedImgIndex;
+  //   image.addEventListener('click', function(e){
+  //     e.preventDefault(); 
+  //     // console.log(image);
+  //     // console.log(index);
+  //     lightbox.style.display="block";
+  //     clickedImgIndex = index;
+  //     function preview() {
+  //       let imageURL = lienImgsTable[newIndex].querySelector("img").src;
+  //       imgLightbox.src = imageURL;
+  //     }
+  //     preview();
+  
+  //     prevArrow.addEventListener("click", function(){
+  //       newIndex--; 
+  //       preview();
+  //     });
+  
+  //     nextArrow.addEventListener("click", function(){
+  //       newIndex++; 
+  //       preview();
+  //     });
+  //   })
+  // });
 
-    }
 
-  }
+  // for (let i = 0; i < lienImgsTable.length; i++) {
+  //   let newIndex = i; //passing i value to newIndex variable
+  //   let clickedImgIndex; //creating new variable
+  //   lienImgsTable[i].onclick = (e) => {
+  //     e.preventDefault();
+  //     lightbox.style.display = "block";
+  //     clickedImgIndex = i; //passing cliked image index to created variable (clickedImgIndex)
+  //     function preview() {
+  //       let imageURL = lienImgsTable[newIndex].querySelector("img").src; //getting user clicked img url
+  //       imgLightbox.src = imageURL; //passing user clicked img url in previewImg src
+  //     }
+  //     preview(); //calling above function
 
+  //     if (newIndex == 0) {
+  //       prevArrow.style.display = "none";
+  //     }
+  //     if (newIndex >= lienImgsTable.length - 1) {
+  //       nextArrow.style.display = "none";
+  //     }
+  //     prevArrow.onclick = () => {
+  //       newIndex--; //decrement index
+  //       if (newIndex == 0) {
+  //         preview();
+  //         prevArrow.style.display = "none";
+  //       } else {
+  //         preview();
+  //         nextArrow.style.display = "block";
+  //       }
+  //     }
+  //     nextArrow.onclick = () => { 
+  //       newIndex++; //increment index
+  //       if (newIndex >= lienImgsTable.length - 1) {
+  //         preview();
+  //         nextArrow.style.display = "none";
+  //       } else {
+  //         preview();
+  //         prevArrow.style.display = "block";
+  //       }
+  //     }
+
+  //   }
+
+  // }
+
+  return {closeLightbox, previousIMG, nextIMG}
 
 }

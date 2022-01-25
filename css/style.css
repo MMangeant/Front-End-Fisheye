@@ -115,8 +115,13 @@ form textarea {
 .photographer_section article a img {
   height: 200px;
   width: 200px;
-  border-radius: 100px;
+  border-radius: 100%;
   object-fit: cover;
+  transition: all 0.2s ease-in-out;
+}
+.photographer_section article a img:hover {
+  transform: scale(0.97);
+  transition: all 0.2s ease-in-out;
 }
 .photographer_section article .textPhotographer {
   text-align: center;
@@ -176,11 +181,31 @@ form textarea {
   gap: 30px 70px;
   margin-top: 25px;
 }
-.photograph-medias > div .lienPhoto img, .photograph-medias > div .lienPhoto video {
+.photograph-medias > div .container-img {
+  position: relative;
+  cursor: pointer;
+}
+.photograph-medias > div .container-img img, .photograph-medias > div .container-img video {
   width: 100%;
   height: 300px;
   border-radius: 5px;
   object-fit: cover;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: -5px;
+}
+.photograph-medias > div .container-img img:hover, .photograph-medias > div .container-img video:hover {
+  transform: scale(0.98);
+  transition: all 0.2s ease-in-out;
+}
+.photograph-medias > div .container-img img:before, .photograph-medias > div .container-img video:before {
+  content: "";
+  background-color: #901c1c;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  mix-blend-mode: hue;
+  border-radius: 5px;
 }
 .photograph-medias > div .textPhoto {
   display: flex;
@@ -215,6 +240,17 @@ form textarea {
   margin: 15px auto;
   display: inline-block;
 }
+.photograph-medias > div .encartPhoto .heart {
+  transition: all 0.5s ease-in-out;
+}
+.photograph-medias > div .encartPhoto .heart:hover {
+  transform: scale(1.3);
+  transition: all 0.5s ease-in-out;
+}
+.photograph-medias > div .encartPhoto .heart:active {
+  opacity: 0.5;
+  transform: scale(0.7);
+}
 
 .encart-bas {
   display: flex;
@@ -245,8 +281,19 @@ form textarea {
   border: none;
   margin-top: 25px;
 }
+.triPhotos select optgroup {
+  border-bottom: 3px solid white;
+}
 .triPhotos select option {
   padding: 20px;
+  border-top: 1px solid col(blanc);
+}
+.triPhotos select option:hover {
+  background: none;
+}
+.triPhotos select option .line {
+  border-bottom: 3px solid white;
+  z-index: 100;
 }
 
 /* LIGHTBOX */

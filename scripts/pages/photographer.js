@@ -8,18 +8,18 @@ let idUrl = urlEl.get('id');
 async function displayDataPage(photographers) {
   const photographersHeader = document.querySelector('.photograph-header');
   // eslint-disable-next-line eqeqeq
-  photographers.filter((photographer) => photographer.id == idUrl).forEach((photographer) => {
+  photographers.forEach((photographer) => {
     // eslint-disable-next-line no-undef
     const photographerPageModel = photographerPageFactory(photographer);
     const userCardDOM2 = photographerPageModel.getUserCardDOM2();
-    // photographersHeader.appendChild(userCardDOM2); // ?????? //
   });
 }
 
 async function displayMedias(medias) {
   const photographerMedias = document.querySelector('.photograph-medias');
   // eslint-disable-next-line eqeqeq
-  medias.filter((media) => media.photographerId == idUrl).forEach((media) => {
+  photographerMedias.innerHTML = '';
+  medias.forEach((media) => {
     // eslint-disable-next-line no-undef
     const mediaModel = mediaFactory(media);
     const userCardDOM3 = mediaModel.getUserCardDOM3();
@@ -38,7 +38,7 @@ async function displayMedias(medias) {
 async function displayEncartBas(photographers) {
   const encartBas = document.querySelector('.encart-bas');
   // eslint-disable-next-line eqeqeq
-  photographers.filter((photographer) => photographer.id == idUrl).forEach((photographer) => {
+  photographers.forEach((photographer) => {
     // eslint-disable-next-line no-undef
     const encartModel = encartBasFactory(photographer); 
     const userCardDOM4 = encartModel.getUserCardDOM4();
@@ -56,21 +56,27 @@ async function initPage() {
   // Récupère les datas des photographes
   // eslint-disable-next-line no-undef
   const { photographers, media } = await getPhotographers();
-  displayDataPage(photographers);
-  displayMedias(media);
-  displayEncartBas(photographers, media);
+
+  let photographersTries = photographers.filter((photographer) => photographer.id == idUrl);
+  let mediasTries = media.filter((media) => media.photographerId == idUrl);
+
+  displayDataPage(photographersTries);
+  displayMedias(mediasTries);
+  displayEncartBas(photographersTries, mediasTries);
   // eslint-disable-next-line no-console
   // console.log(media);
   // amazing();
-  lightbox();
+  
+  // array.forEach(element => console.log('yoyo'));
+  
+  // array.forEach(function (element){
+    //    console.log('yoyo');
+    // });
 
-// array.forEach(element => console.log('yoyo'));
+    // lightbox();
+    
+    document.querySelector('#selectTris').addEventListener('change', e => clickTri(e.target.value, mediasTries));
 
-// array.forEach(function (element){
-//    console.log('yoyo');
-// });
-
-  document.querySelector('#selectTris').addEventListener('change', e => clickTri(e.target.value, media))
   
 }
 

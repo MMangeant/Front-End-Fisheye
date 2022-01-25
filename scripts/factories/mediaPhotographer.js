@@ -8,14 +8,14 @@ function mediaFactory(data) {
   function ImageOuVideo() {
     if (data.image) {
       return `
-        <a class="lienPhoto" href="${picture}" alt="" data-idmedia="${id}">
+        <div onclick="lightbox(this)" class="container-img" alt="" data-idmedia="${id}">
           <img class="imgPhoto" src="${picture}" alt="photo" data-type="img"></img>
-        </a>`;
+        </div>`;
     } 
     return `
-      <a class="lienPhoto" href="${pictureVideo}" alt="" data-idmedia="${id}">
+      <div onclick="lightbox(this)" class="container-img" alt="" data-idmedia="${id}">
         <video class="imgPhoto" src="${pictureVideo}" alt="video" data-type="video"></video>
-      </a>`;
+      </div>`;
   }
   function getUserCardDOM3() {
     const mediasPhotographer = document.createElement('div');

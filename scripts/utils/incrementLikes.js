@@ -6,3 +6,4 @@ function calculCoeur(idMedia) {
   sommeLikes++;
   /* let afficheLikes =  */document.querySelector('.totalLikes').textContent = sommeLikes;
 }
+
