@@ -8,12 +8,12 @@ function mediaFactory(data) {
   function ImageOuVideo() {
     if (data.image) {
       return `
-        <div onclick="lightbox(this)" class="container-img" alt="" data-idmedia="${id}">
+        <div onclick="lightbox(this)" class="container-img" alt="" data-idmedia="${id}" tabindex="0">
           <img class="imgPhoto" src="${picture}" alt="photo" data-type="img"></img>
         </div>`;
     } 
     return `
-      <div onclick="lightbox(this)" class="container-img" alt="" data-idmedia="${id}">
+      <div onclick="lightbox(this)" class="container-img" alt="" data-idmedia="${id}" tabindex="0">
         <video class="imgPhoto" src="${pictureVideo}" alt="video" data-type="video"></video>
       </div>`;
   }
@@ -23,7 +23,7 @@ function mediaFactory(data) {
       <div class="encartPhoto" data-likes="${likes}" data-title="${title}" data-date="${date}">
         ${ImageOuVideo()}
         <div class="textPhoto">
-          <h3 class="nomPhoto">${title}</h3>
+          <h3 class="nomPhoto" tabindex="0">${title}</h3>
             <button class="likesPhoto" data-idmedia="${id}" data-likes="${likes}">
               <span class="nbLikes nb${id}">${likes}</span>
               <img class="heart heart-likes" src="assets/icons/heart.svg" alt="" data-likes="${likes}" data-idmedia="${id}" onclick="calculCoeur(${id})">

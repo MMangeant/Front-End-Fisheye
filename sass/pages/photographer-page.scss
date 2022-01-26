@@ -148,27 +148,20 @@
 }
 
 .triPhotos{
-    select{
+    ul{
         background-color: $rouge;
         border-radius: 5px;
         padding: 20px;
         font-size: 1em;
         color: $blanc;
         border:none;
+        width: 120px;
         margin-top: 25px;
-        optgroup{
-          border-bottom: 3px solid white;
-        }
-        option{
+        list-style-type: none;
+        li{
             padding: 20px;
-            border-top: 1px solid col(blanc);
             &:hover{
-              background: none;
-            }
-            .line{
-              border-bottom: 3px solid white;
-              z-index: 100;
-              
+              background-color: $orange;
             }
         }
     }

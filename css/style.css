@@ -272,28 +272,22 @@ form textarea {
   padding-top: 3px;
 }
 
-.triPhotos select {
+.triPhotos ul {
   background-color: #901c1c;
   border-radius: 5px;
   padding: 20px;
   font-size: 1em;
   color: #ffffff;
   border: none;
+  width: 120px;
   margin-top: 25px;
+  list-style-type: none;
 }
-.triPhotos select optgroup {
-  border-bottom: 3px solid white;
-}
-.triPhotos select option {
+.triPhotos ul li {
   padding: 20px;
-  border-top: 1px solid col(blanc);
 }
-.triPhotos select option:hover {
-  background: none;
-}
-.triPhotos select option .line {
-  border-bottom: 3px solid white;
-  z-index: 100;
+.triPhotos ul li:hover {
+  background-color: #D3573C;
 }
 
 /* LIGHTBOX */

@@ -75,7 +75,7 @@ async function initPage() {
 
     // lightbox();
     
-    document.querySelector('#selectTris').addEventListener('change', e => clickTri(e.target.value, mediasTries));
+    document.querySelectorAll('#selectTris li').forEach(li => li.addEventListener('click', e => clickTri(e.target.id, mediasTries)))
 
   
 }
