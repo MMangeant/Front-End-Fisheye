@@ -37,6 +37,10 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
 }
+.contact_button:hover {
+  color: #000000;
+  background-color: #DB8876;
+}
 
 .modal {
   box-shadow: 5px 5px 0px 10000px rgba(255, 255, 255, 0.8);

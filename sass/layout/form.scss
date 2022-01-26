@@ -8,6 +8,10 @@
     background-color: $rouge;
     border-radius: 5px;
     cursor: pointer;
+    &:hover{
+      color: $noir;
+      background-color: $rose;
+    }
 }
 
 .modal {
