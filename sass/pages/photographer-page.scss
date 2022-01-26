@@ -148,22 +148,52 @@
 }
 
 .triPhotos{
-    ul{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+    .trierPar{
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    .dropDown{
+      position: relative;
+      >div{
         background-color: $rouge;
         border-radius: 5px;
         padding: 20px;
         font-size: 1em;
         color: $blanc;
-        border:none;
         width: 120px;
-        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    }
+    ul{
+        background-color: $rouge;
+        border-radius: 5px;
+        padding: 0;
+        font-size: 1em;
+        color: $blanc;
+        border:none;
+        width: 160px;
         list-style-type: none;
+        margin: 0;
+        display: none;
         li{
+          cursor: pointer;
             padding: 20px;
             &:hover{
               background-color: $orange;
+              border-radius: 5px;
             }
+            border-bottom: 1px solid $blanc;
         }
+    }
+    #popularite{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
 }
 

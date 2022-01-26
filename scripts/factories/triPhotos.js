@@ -5,9 +5,24 @@
 // }
 let previousChoice; 
 
+const ouvreTri = document.querySelector('.ouvreTri');
+const selectTri = document.querySelector('#selectTris');
+const fermeTri = document.querySelector('.fa-chevron-up');
+
+ouvreTri.addEventListener('click', function openTri() {
+  selectTri.style.display = "block";
+  ouvreTri.style.display = "none";
+});
+
+fermeTri.addEventListener('click', function openTri() {
+  selectTri.style.display = "none";
+  ouvreTri.style.display = "flex";
+});
+
 function clickTri(motcle, data ){
   // console.log(motcle.target.id, ' popularite');
   // console.log(data);
+
   console.log('exter : ',previousChoice);
 
   if(previousChoice === motcle){
@@ -55,6 +70,7 @@ function clickTri(motcle, data ){
     displayMedias(data); //affiche les medias
     console.log('else')
     // console.log(motcle)
+    
   }
 }
 

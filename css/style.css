@@ -272,22 +272,54 @@ form textarea {
   padding-top: 3px;
 }
 
-.triPhotos ul {
+.triPhotos {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.triPhotos .trierPar {
+  font-weight: bold;
+  margin-right: 20px;
+}
+.triPhotos .dropDown {
+  position: relative;
+}
+.triPhotos .dropDown > div {
   background-color: #901c1c;
   border-radius: 5px;
   padding: 20px;
   font-size: 1em;
   color: #ffffff;
-  border: none;
   width: 120px;
-  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.triPhotos ul {
+  background-color: #901c1c;
+  border-radius: 5px;
+  padding: 0;
+  font-size: 1em;
+  color: #ffffff;
+  border: none;
+  width: 160px;
   list-style-type: none;
+  margin: 0;
+  display: none;
 }
 .triPhotos ul li {
+  cursor: pointer;
   padding: 20px;
+  border-bottom: 1px solid #ffffff;
 }
 .triPhotos ul li:hover {
   background-color: #D3573C;
+  border-radius: 5px;
+}
+.triPhotos #popularite {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 /* LIGHTBOX */
