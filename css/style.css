@@ -274,12 +274,12 @@ form textarea {
 
 .triPhotos {
   display: flex;
-  align-items: center;
   margin-top: 20px;
 }
 .triPhotos .trierPar {
   font-weight: bold;
   margin-right: 20px;
+  padding-top: 20px;
 }
 .triPhotos .dropDown {
   position: relative;
