@@ -11,11 +11,11 @@ function encartBasFactory(data) {
 
   function getUserCardDOM4() {
     encartBas.innerHTML += `
-      <div>
-        <span class="totalLikes">${sommeLikes}</span>
+      <div tabindex="0">
+        <span class="totalLikes" tabindex="0">${sommeLikes}</span>
         <img class="heart" src="./assets/icons/heart-noir.svg" alt="">
       </div>
-      <div>${price}€/jour</div>
+      <div tabindex="0">${price}€/jour</div>
     `;
     return encartBas;
   }

@@ -42,7 +42,7 @@ function lightbox(param) {
     else{
       console.log('vid');
       contLightbox.innerHTML = `
-        <video  class="lightbox__video" controls width="250">
+        <video  class="lightbox__video" autoplay width="250">
           <source src="" type="video/mp4">
         </video>
       `;

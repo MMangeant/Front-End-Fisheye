@@ -9,13 +9,13 @@ function photographerPageFactory(data) {
     // const headerPhotographer = document.querySelector('.photograph-header');
     photographersHeader.innerHTML += `
       <div class="textPhotographer">
-        <h2 class="namePhotographer">${name}</h2>
-        <h3 class="adressePhotographer">${city}, ${country}</h3>
-        <p class="taglinePhotographer">${tagline}</p>
+        <h2 class="namePhotographer" tabindex="0" >${name}</h2>
+        <h3 class="adressePhotographer" tabindex="0">${city}, ${country}</h3>
+        <p class="taglinePhotographer" tabindex="0">${tagline}</p>
       </div>
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <button class="contact_button" onclick="displayModal()" tabindex="0">Contactez-moi</button>
       <div>
-        <img  class="portraitPhotographer" src="${picture}" alt="photographer photo">
+        <img  class="portraitPhotographer" src="${picture}" alt="${name}" tabindex="0">
       </div>
     `;
     return photographersHeader;
