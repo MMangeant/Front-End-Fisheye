@@ -24,6 +24,8 @@ function lightbox(param) {
     nextIMG();
   }
   else{
+
+    lightbox.focus();
     
     let imgClicked= param.querySelector("img,video");
     imgCurrent = imgClicked;
@@ -89,104 +91,16 @@ function lightbox(param) {
   }
 
 
-  // lienImgsTable.forEach(image =>{
-
-  //     image.addEventListener('click', function(e){
-  //         e.preventDefault(); 
-  //         lightbox.style.display="block";
-  //         imgLightbox.src = this.href;
-  //         console.log(this);
-  //         console.log(lienImgsTable.indexOf(this));
-  //         // this.classList.toggle("activeImg");
-
-  //         let imgPrevious = lienImgsTable.indexOf(this) -1;
-  //         let imgNext = lienImgsTable.indexOf(this) +1;
-
-  //         prevArrow.addEventListener("click", function(e){
-  //             imgLightbox.src = lienImgsTable[imgPrevious].href; 
-  //             // this.classList.add("activeImg");
-  //         });
-
-  //         nextArrow.addEventListener("click", function(){
-  //             imgLightbox.src = lienImgsTable[imgNext].href; 
-  //             // this.classList.add("activeImg");
-  //         });
-  //     })
-  // })
-
-
-  // lienImgsTable.forEach(function(image, index){
-  //   let newIndex = index;
-  //   let clickedImgIndex;
-  //   image.addEventListener('click', function(e){
-  //     e.preventDefault(); 
-  //     // console.log(image);
-  //     // console.log(index);
-  //     lightbox.style.display="block";
-  //     clickedImgIndex = index;
-  //     function preview() {
-  //       let imageURL = lienImgsTable[newIndex].querySelector("img").src;
-  //       imgLightbox.src = imageURL;
-  //     }
-  //     preview();
-  
-  //     prevArrow.addEventListener("click", function(){
-  //       newIndex--; 
-  //       preview();
-  //     });
-  
-  //     nextArrow.addEventListener("click", function(){
-  //       newIndex++; 
-  //       preview();
-  //     });
-  //   })
-  // });
-
-
-  // for (let i = 0; i < lienImgsTable.length; i++) {
-  //   let newIndex = i; //passing i value to newIndex variable
-  //   let clickedImgIndex; //creating new variable
-  //   lienImgsTable[i].onclick = (e) => {
-  //     e.preventDefault();
-  //     lightbox.style.display = "block";
-  //     clickedImgIndex = i; //passing cliked image index to created variable (clickedImgIndex)
-  //     function preview() {
-  //       let imageURL = lienImgsTable[newIndex].querySelector("img").src; //getting user clicked img url
-  //       imgLightbox.src = imageURL; //passing user clicked img url in previewImg src
-  //     }
-  //     preview(); //calling above function
-
-  //     if (newIndex == 0) {
-  //       prevArrow.style.display = "none";
-  //     }
-  //     if (newIndex >= lienImgsTable.length - 1) {
-  //       nextArrow.style.display = "none";
-  //     }
-  //     prevArrow.onclick = () => {
-  //       newIndex--; //decrement index
-  //       if (newIndex == 0) {
-  //         preview();
-  //         prevArrow.style.display = "none";
-  //       } else {
-  //         preview();
-  //         nextArrow.style.display = "block";
-  //       }
-  //     }
-  //     nextArrow.onclick = () => { 
-  //       newIndex++; //increment index
-  //       if (newIndex >= lienImgsTable.length - 1) {
-  //         preview();
-  //         nextArrow.style.display = "none";
-  //       } else {
-  //         preview();
-  //         prevArrow.style.display = "block";
-  //       }
-  //     }
-
-  //   }
-
-  // }
-
   return {closeLightbox, previousIMG, nextIMG}
 
 }
+
+
+//KEYDOWN//
+const open_lightbox = document.querySelectorAll('.container-img');
+console.log(open_lightbox);
+open_lightbox.forEach(img =>{img.addEventListener('keydown', event => {
+  if (event.code == 'Enter') {
+  }
+  })
+});

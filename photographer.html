@@ -54,7 +54,7 @@
 			<div class="modal" tabindex="0">
 				<header>
           <h2 aria-label="contactez-moi" tabindex="0">Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" title="fermeture" alt="bouton fermeture modale" aria-label="bouton fermeture modale" tabindex="0"/>
+          <img src="assets/icons/close.svg" onclick="closeModal()" id="closeModal" title="fermeture" alt="bouton fermeture modale" aria-label="bouton fermeture modale" tabindex="0"/>
         </header>
 				<form name="contact_form" id="contact_form">
 					<div>
@@ -73,7 +73,7 @@
             <label aria-label="message" tabindex="0">Votre message</label><br>
             <textarea id="message" name="message" tabindex="0"></textarea><br>
           </div>
-          <button class="contact_button" aria-label="envoyer" tabindex="0">Envoyer</button>
+          <button id="send_button" onclick="closeModal()" aria-label="envoyer" tabindex="0">Envoyer</button>
 				</form>
 			</div>
 		</div>

@@ -8,12 +8,12 @@ function mediaFactory(data) {
   function ImageOuVideo() {
     if (data.image) {
       return `
-        <div onclick="lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
+        <div onclick="lightbox(this)"  class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
           <img class="imgPhoto" src="${picture}" alt="${title}" data-type="photo"></img>
         </div>`;
     } 
     return `
-      <div onclick="lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
+      <div onclick="lightbox(this)"  class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
         <video class="imgPhoto" src="${pictureVideo}" alt="${title}" data-type="video"></video>
       </div>`;
     }
