@@ -8,13 +8,13 @@ function mediaFactory(data) {
   function ImageOuVideo() {
     if (data.image) {
       return `
-        <div onclick="lightbox(this)"  class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
-          <img class="imgPhoto" src="${picture}" alt="${title}" data-type="photo"></img>
+        <div onclick="lightbox(this)" onKeyPress="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
+          <img class="imgPhoto" src="${picture}" alt="${title}" data-type="photo" data-title="${title}"></img>
         </div>`;
     } 
     return `
-      <div onclick="lightbox(this)"  class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
-        <video class="imgPhoto" src="${pictureVideo}" alt="${title}" data-type="video"></video>
+      <div onclick="lightbox(this)" onKeyPress="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
+        <video class="imgPhoto" src="${pictureVideo}" alt="${title}" data-type="video" data-title="${title}"></video>
       </div>`;
     }
   function getUserCardDOM3() {
@@ -31,6 +31,7 @@ function mediaFactory(data) {
         </div>
       </div>
     `;
+
     return mediasPhotographer;
   }
   // eslint-disable-next-line object-curly-newline

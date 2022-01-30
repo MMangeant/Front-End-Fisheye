@@ -6,7 +6,7 @@ function photographerPageFactory(data) {
   const { name, id, city, country, tagline, portrait } = data;
   const picture = `assets/photographers/${portrait}`;
   function getUserCardDOM2() {
-    // const headerPhotographer = document.querySelector('.photograph-header');
+
     photographersHeader.innerHTML += `
       <div class="textPhotographer">
         <h2 class="namePhotographer" tabindex="0" >${name}</h2>
@@ -18,7 +18,11 @@ function photographerPageFactory(data) {
         <img  class="portraitPhotographer" src="${picture}" alt="${name}" tabindex="0">
       </div>
     `;
+
+    nameContact.innerHTML += `${name}`;
+
     return photographersHeader;
+    return nameContact;
   }
   // eslint-disable-next-line object-curly-newline
   return { name, picture, id, city, country, tagline, getUserCardDOM2 };

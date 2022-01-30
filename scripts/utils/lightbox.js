@@ -1,6 +1,9 @@
 
 const prevArrow = document.querySelector('.lightbox__prev');
 const nextArrow = document.querySelector('.lightbox__next');
+const crossLightbox = document.querySelector('.lightbox__close');
+
+const titleLightbox = document.querySelector('.lightbox__title');
 
 let imgCurrent;
 let idImgCurrent;
@@ -11,8 +14,10 @@ function lightbox(param) {
   const contLightbox = document.querySelector('.lightbox__container');
   let imgLightbox = document.querySelector('.lightbox__container img , video source');
 
-  const allImgsTable = Array.from(document.querySelectorAll('.container-img img,.container-img video'));
-  // console.log(allImgsTable);
+  const allImgsTable = Array.from(document.querySelectorAll('.container-img img,.container-img video '));
+  console.log(allImgsTable);
+
+  contLightbox.focus();
 
   if(param === "close"){
     closeLightbox();
@@ -25,7 +30,7 @@ function lightbox(param) {
   }
   else{
 
-    lightbox.focus();
+    contLightbox.focus();
     
     let imgClicked= param.querySelector("img,video");
     imgCurrent = imgClicked;
@@ -35,7 +40,7 @@ function lightbox(param) {
 
     if(imgCurrent.dataset.type === 'photo'){
       console.log('phto');
-      contLightbox.innerHTML = `
+      contLightbox.innerHTML += `
         <img class="lightbox__photo" src="" alt="">
       `;
       photoLightbox = document.querySelector('.lightbox__photo');
@@ -43,7 +48,7 @@ function lightbox(param) {
     }
     else{
       console.log('vid');
-      contLightbox.innerHTML = `
+      contLightbox.innerHTML += `
         <video  class="lightbox__video" autoplay width="250">
           <source src="" type="video/mp4">
         </video>
@@ -52,6 +57,7 @@ function lightbox(param) {
       imgLightbox = videoLightbox;
     }
 
+    titleLightbox.innerHTML += imgCurrent.dataset.title;
     imgLightbox.src = imgCurrent.src;
     idImgCurrent = allImgsTable.indexOf(imgCurrent);
     lightbox.style.display="block";
@@ -59,12 +65,15 @@ function lightbox(param) {
 
   function closeLightbox(){
     lightbox.style.display = "none";
+    titleLightbox.innerHTML = ``;
   }
 
   function previousIMG(){
     idImgCurrent = allImgsTable.indexOf(imgCurrent)-1;
     imgCurrent = allImgsTable[idImgCurrent];
     imgLightbox.src = allImgsTable[idImgCurrent].src;
+    titleLightbox.innerHTML = ``;
+    titleLightbox.innerHTML += allImgsTable[idImgCurrent].dataset.title;
 
     // if (idImgCurrent == 0) {
     //   prevArrow.style.display = "none";
@@ -79,6 +88,8 @@ function lightbox(param) {
     idImgCurrent = allImgsTable.indexOf(imgCurrent)+1;
     imgCurrent = allImgsTable[idImgCurrent];
     imgLightbox.src = allImgsTable[idImgCurrent].src;
+    titleLightbox.innerHTML = ``;
+    titleLightbox.innerHTML += allImgsTable[idImgCurrent].dataset.title;
 
     // if (idImgCurrent >= allImgsTable.length - 1) {
     //   nextArrow.style.display = "none";
@@ -90,17 +101,19 @@ function lightbox(param) {
 
   }
 
+   //KEYPRESS//
+  //  const open_lightbox = document.querySelectorAll('.container-img');
+  //  console.log(open_lightbox);
+  //  open_lightbox.forEach(img =>{img.addEventListener('keypress', event => {
+  //    if (event.code == 'Enter') {
+  //      lightbox();
+  //    }
+  //    })
+  //  });
 
   return {closeLightbox, previousIMG, nextIMG}
 
 }
 
 
-//KEYDOWN//
-const open_lightbox = document.querySelectorAll('.container-img');
-console.log(open_lightbox);
-open_lightbox.forEach(img =>{img.addEventListener('keydown', event => {
-  if (event.code == 'Enter') {
-  }
-  })
-});
+

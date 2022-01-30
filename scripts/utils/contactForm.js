@@ -15,9 +15,9 @@ function closeModal() {
 
 
 //KEYDOWN//
-const close_modal = document.querySelector('#closeModal');
-close_modal.addEventListener('keydown', event => {
-  if (event.code == 'Enter') {
-    closeModal();
-  }
-});
+// const close_modal = document.querySelector('#closeModal');
+// close_modal.addEventListener('keypress', event => {
+//   if (event.code == 'Enter') {
+//     closeModal();
+//   }
+// });

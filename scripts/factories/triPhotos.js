@@ -19,6 +19,23 @@ fermeTri.addEventListener('click', function openTri() {
   ouvreTri.style.display = "flex";
 });
 
+
+//KEYPRESS//
+ouvreTri.addEventListener('keypress', event => {
+  if (event.code == 'Enter') {
+    selectTri.style.display = "block";
+    ouvreTri.style.display = "none";
+  }
+});
+
+fermeTri.addEventListener('keypress', event => {
+  if (event.code == 'Enter') {
+    selectTri.style.display = "none";
+    ouvreTri.style.display = "flex";
+  }
+});
+
+
 function clickTri(motcle, data ){
   // console.log(motcle.target.id, ' popularite');
   // console.log(data);
