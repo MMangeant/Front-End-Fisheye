@@ -8,20 +8,20 @@ function mediaFactory(data) {
   function ImageOuVideo() {
     if (data.image) {
       return `
-        <div onclick="lightbox(this)" onKeyPress="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
-          <img class="imgPhoto" src="${picture}" alt="${title}" data-type="photo" data-title="${title}"></img>
-        </div>`;
+      <img class="imgPhoto" src="${picture}" alt="${title}" data-type="photo" data-title="${title}" class="sourceLightbox"></img>`;
     } 
-    return `
-      <div onclick="lightbox(this)" onKeyPress="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
-        <video class="imgPhoto" src="${pictureVideo}" alt="${title}" data-type="video" data-title="${title}"></video>
-      </div>`;
+      return `
+      <video class="imgPhoto" src="${pictureVideo}" alt="${title}" data-type="video" data-title="${title}" >
+        <source src="${pictureVideo}" type="video/mp4" class="sourceLightbox" data-title="${title}" data-type="video">
+      </video>`;
     }
   function getUserCardDOM3() {
     const mediasPhotographer = document.createElement('div');
     mediasPhotographer.innerHTML += `
       <div class="encartPhoto" data-likes="${likes}" data-title="${title}" data-date="${date}">
-        ${ImageOuVideo()}
+        <div onclick="lightbox(this)" onKeyUp="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
+          ${ImageOuVideo()}
+        </div>
         <div class="textPhoto">
           <h3 class="nomPhoto" tabindex="0">${title}</h3>
             <button class="likesPhoto" data-idmedia="${id}" data-likes="${likes}">

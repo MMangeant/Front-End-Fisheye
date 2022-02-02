@@ -5,17 +5,41 @@ const crossLightbox = document.querySelector('.lightbox__close');
 
 const titleLightbox = document.querySelector('.lightbox__title');
 
-let imgCurrent;
-let idImgCurrent;
+let mediaCurrent;
+let idMediaCurrent;
+
+let photoLightbox;
+let videoLightbox;
+
+// document.addEventListener('keyup',function (e){
+//   if(e.which == 13){
+//     return lightbox(e.target)
+//   }
+// })
 
 function lightbox(param) {
+
+  document.addEventListener('keyup',function (e){
+    if(e.which == 37){
+      console.log('flèche G');
+      return previousIMG()
+    }
+    if(e.which == 39){
+      console.log('flèche D');
+      return nextIMG()
+    }
+    if(e.which == 27){
+      console.log('close');
+      return closeLightbox();
+    }
+    // console.log('keyup ', e);
+  })
   // console.log(param);
   const lightbox = document.querySelector('.lightbox');
   const contLightbox = document.querySelector('.lightbox__container');
-  let imgLightbox = document.querySelector('.lightbox__container img , video source');
+  let mediaLightbox = document.querySelector('.lightbox__container img ,.lightbox__container video source');
 
-  const allImgsTable = Array.from(document.querySelectorAll('.container-img img,.container-img video '));
-  console.log(allImgsTable);
+  const allImgsTable = Array.from(document.querySelectorAll('.container-img img,.container-img video source'));
 
   contLightbox.focus();
 
@@ -30,86 +54,124 @@ function lightbox(param) {
   }
   else{
 
-    contLightbox.focus();
+    // contLightbox.focus();
     
-    let imgClicked= param.querySelector("img,video");
-    imgCurrent = imgClicked;
+    let mediaClicked= param.querySelector("img,video source");
+    mediaCurrent = mediaClicked;
 
-    let photoLightbox;
-    let videoLightbox;
-
-    if(imgCurrent.dataset.type === 'photo'){
-      console.log('phto');
-      contLightbox.innerHTML += `
-        <img class="lightbox__photo" src="" alt="">
+    if(mediaCurrent.dataset.type === 'photo'){
+      contLightbox.innerHTML = `
+        <img class="lightbox__photo" src="" alt="" tabindex="0">
       `;
       photoLightbox = document.querySelector('.lightbox__photo');
-      imgLightbox = photoLightbox;
+      mediaLightbox = photoLightbox;
     }
     else{
-      console.log('vid');
-      contLightbox.innerHTML += `
-        <video  class="lightbox__video" autoplay width="250">
+      contLightbox.innerHTML = `
+        <video  class="lightbox__video" autoplay width="250" tabindex="0">
           <source src="" type="video/mp4">
         </video>
       `;
       videoLightbox = document.querySelector('.lightbox__video source');
-      imgLightbox = videoLightbox;
+      mediaLightbox = videoLightbox;
     }
 
-    titleLightbox.innerHTML += imgCurrent.dataset.title;
-    imgLightbox.src = imgCurrent.src;
-    idImgCurrent = allImgsTable.indexOf(imgCurrent);
+    titleLightbox.innerHTML += mediaCurrent.dataset.title;
+    mediaLightbox.src = mediaCurrent.src;
+    idMediaCurrent = allImgsTable.indexOf(mediaCurrent);
     lightbox.style.display="block";
+
+    if (idMediaCurrent == 0) {
+      prevArrow.style.display = "none";
+    }
+    if (idMediaCurrent >= allImgsTable.length - 1) {
+      nextArrow.style.display = "none";
+    }
+
+    document.getElementById('focusLightbox').focus();
   }
 
   function closeLightbox(){
+    prevArrow.style.display = "block";
+    nextArrow.style.display = "block";
     lightbox.style.display = "none";
     titleLightbox.innerHTML = ``;
   }
 
   function previousIMG(){
-    idImgCurrent = allImgsTable.indexOf(imgCurrent)-1;
-    imgCurrent = allImgsTable[idImgCurrent];
-    imgLightbox.src = allImgsTable[idImgCurrent].src;
-    titleLightbox.innerHTML = ``;
-    titleLightbox.innerHTML += allImgsTable[idImgCurrent].dataset.title;
+    console.log('youyo');
+    idMediaCurrent = allImgsTable.indexOf(mediaCurrent)-1;
+    console.log(idMediaCurrent);
+    mediaCurrent = allImgsTable[idMediaCurrent];
+    console.log(allImgsTable);
 
-    // if (idImgCurrent == 0) {
-    //   prevArrow.style.display = "none";
-    // }
-    // else{
-    //   prevArrow.style.display = "block";
-    // }
+    if(mediaCurrent.dataset.type === 'photo'){
+      console.log('phto');
+      contLightbox.innerHTML = `
+        <img class="lightbox__photo" src="" alt="">
+      `;
+      photoLightbox = document.querySelector('.lightbox__photo');
+      mediaLightbox = photoLightbox;
+    }
+    else{
+      console.log('vid');
+      contLightbox.innerHTML = `
+        <video  class="lightbox__video" autoplay width="250">
+          <source src="" type="video/mp4">
+        </video>
+      `;
+      videoLightbox = document.querySelector('.lightbox__video source');
+      mediaLightbox = videoLightbox;
+    }
+
+    mediaLightbox.src = allImgsTable[idMediaCurrent].src;
+    titleLightbox.innerHTML = ``;
+    titleLightbox.innerHTML += allImgsTable[idMediaCurrent].dataset.title;
+
+    if (idMediaCurrent == 0) {
+      prevArrow.style.display = "none";
+    }
+    if (idMediaCurrent <= allImgsTable.length) {
+      nextArrow.style.display = "block";
+    }
 
   }
   
   function nextIMG(){
-    idImgCurrent = allImgsTable.indexOf(imgCurrent)+1;
-    imgCurrent = allImgsTable[idImgCurrent];
-    imgLightbox.src = allImgsTable[idImgCurrent].src;
+    idMediaCurrent = allImgsTable.indexOf(mediaCurrent)+1;
+    mediaCurrent = allImgsTable[idMediaCurrent];
+
+    if(mediaCurrent.dataset.type === 'photo'){
+      console.log('phto');
+      contLightbox.innerHTML = `
+        <img class="lightbox__photo" src="" alt="">
+      `;
+      photoLightbox = document.querySelector('.lightbox__photo');
+      mediaLightbox = photoLightbox;
+    }
+    else{
+      console.log('vid');
+      contLightbox.innerHTML = `
+        <video  class="lightbox__video" autoplay width="250">
+          <source src="" type="video/mp4">
+        </video>
+      `;
+      videoLightbox = document.querySelector('.lightbox__video source');
+      mediaLightbox = videoLightbox;
+    }
+    
+    mediaLightbox.src = allImgsTable[idMediaCurrent].src;
     titleLightbox.innerHTML = ``;
-    titleLightbox.innerHTML += allImgsTable[idImgCurrent].dataset.title;
+    titleLightbox.innerHTML += allImgsTable[idMediaCurrent].dataset.title;
 
-    // if (idImgCurrent >= allImgsTable.length - 1) {
-    //   nextArrow.style.display = "none";
-    // }
-    // else{
-    //   nextArrow.style.display = "block";
-
-    // }
+    if (idMediaCurrent >= allImgsTable.length - 1) {
+      nextArrow.style.display = "none";
+    }
+    if (idMediaCurrent > 0) {
+      prevArrow.style.display = "block";
+    }
 
   }
-
-   //KEYPRESS//
-  //  const open_lightbox = document.querySelectorAll('.container-img');
-  //  console.log(open_lightbox);
-  //  open_lightbox.forEach(img =>{img.addEventListener('keypress', event => {
-  //    if (event.code == 'Enter') {
-  //      lightbox();
-  //    }
-  //    })
-  //  });
 
   return {closeLightbox, previousIMG, nextIMG}
 

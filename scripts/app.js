@@ -9,3 +9,6 @@ async function getPhotographers() {
   const photographers = await getDataJson();
   return photographers;
 }
+
+
+

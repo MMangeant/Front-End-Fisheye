@@ -78,8 +78,10 @@ async function initPage() {
     document.querySelectorAll('#selectTris li').forEach(li => li.addEventListener('click', e => clickTri(e.target.id, mediasTries)))
     document.querySelectorAll('#selectTris li').forEach(li => li.addEventListener('keypress', e => clickTri(e.target.id, mediasTries)))
 
-  
+
 }
+
+
 
 initPage();
 

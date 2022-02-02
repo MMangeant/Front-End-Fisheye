@@ -37,23 +37,19 @@
 
       <div class="encart-bas"></div>
 
-      <div class="lightbox">
-        <button class="lightbox__close" onclick="lightbox('close')" onKeyPress="if(event.keyCode == 13) lightbox('close')" tabindex="0" aria-label="fermer la lightbox"></button>
-        <button class="lightbox__prev" onclick="lightbox('prev')"  onKeyPress="if(event.keyCode == 13) lightbox('prev')"  tabindex="0" aria-label="média précédent"></button>
-        <button class="lightbox__next" onclick="lightbox('next')" onKeyPress="if(event.keyCode == 13) lightbox('next')" tabindex="0" aria-label="média suivant"></button>
+      <div class="lightbox" autofocus>
+        <button class="lightbox__close" onclick="lightbox('close')"  tabindex="0" aria-label="fermer la lightbox" id='focusLightbox'></button>
+        <button class="lightbox__prev" onclick="lightbox('prev')"  tabindex="0" aria-label="média précédent"></button>
+        <button class="lightbox__next" onclick="lightbox('next')"  tabindex="0" aria-label="média suivant"></button>
         <div class="lightbox__container" tabindex="0" >
-          <!-- <img class="lightbox__photo" src="" alt="">
-          <video  class="lightbox__video" controls width="250">
-            <source src="" type="video/mp4">
-          </video> -->
         </div>
-        <h3 class="lightbox__title" tabindex="0"></h3>
+        <h3 class="lightbox__title" tabindex="0" alt=""></h3>
       </div>
 
     </main>
     <div id="contact_modal" role="dialog" aria-labelledby="contact_form">
 			<div class="modal" tabindex="0">
-				<header>
+				<header id="focusModal">
           <h2 aria-label="contactez-moi" tabindex="0">Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" onKeyPress="if (event.keyCode == 13) closeModal()" id="closeModal" title="fermeture" alt="bouton fermeture modale" aria-label="bouton fermeture modale" tabindex="0"/>
         </header>
@@ -61,11 +57,11 @@
 				<form name="contact_form" id="contact_form">
 					<div>
 						<label aria-label="prénom" tabindex="0">Prénom</label>
-						<input class="text-control" type="text" id="first" name="first" tabindex="0"/><br>
+						<input class="text-control" type="text" id="first" name="prénom" tabindex="0"/><br>
 					</div>
           <div>
             <label aria-label="nom" tabindex="0">Nom</label><br>
-            <input class="text-control" type="text" id="last" name="last" tabindex="0"/><br>
+            <input class="text-control" type="text" id="last" name="nom" tabindex="0"/><br>
           </div>
           <div>
             <label aria-label="email" tabindex="0">Email</label><br>
@@ -75,7 +71,7 @@
             <label aria-label="message" tabindex="0">Votre message</label><br>
             <textarea id="message" name="message" tabindex="0"></textarea><br>
           </div>
-          <button id="send_button" onclick="closeModal()" aria-label="envoyer" tabindex="0">Envoyer</button>
+          <button id="send_button" aria-label="envoyer" tabindex="0">Envoyer</button>
 				</form>
 			</div>
 		</div>

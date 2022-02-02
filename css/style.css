@@ -396,6 +396,7 @@ form textarea {
   height: 100%;
 }
 .lightbox__photo, .lightbox__video {
+  width: 50%;
   display: flex;
   align-items: center;
   max-height: 90%;
