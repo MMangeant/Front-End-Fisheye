@@ -1,8 +1,8 @@
 function encartBasFactory(data) {
-  const { id, photographerId, likes, price } = data;
-
-  [...document.querySelectorAll('.nbLikes')].forEach(like =>{ sommeLikes += Number(like.innerHTML) });
-
+  const {
+    id, photographerId, likes, price,
+  } = data;
+  [...document.querySelectorAll('.nbLikes')].forEach((like) => { sommeLikes += Number(like.innerHTML); });
   function getUserCardDOM4() {
     encartBas.innerHTML += `
       <div tabindex="0">
@@ -13,6 +13,8 @@ function encartBasFactory(data) {
     `;
     return encartBas;
   }
-  
-  return { id, photographerId, likes, price, getUserCardDOM4 };
+
+  return {
+    id, photographerId, likes, price, getUserCardDOM4,
+  };
 }

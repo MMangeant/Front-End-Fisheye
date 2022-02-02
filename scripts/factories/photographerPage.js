@@ -1,10 +1,9 @@
-
 function photographerPageFactory(data) {
-
-  const { name, id, city, country, tagline, portrait } = data;
+  const {
+    name, id, city, country, tagline, portrait,
+  } = data;
   const picture = `assets/photographers/${portrait}`;
   function getUserCardDOM2() {
-
     photographersHeader.innerHTML += `
       <div class="textPhotographer">
         <h2 class="namePhotographer" tabindex="0" >${name}</h2>
@@ -16,12 +15,10 @@ function photographerPageFactory(data) {
         <img  class="portraitPhotographer" src="${picture}" alt="${name}" tabindex="0">
       </div>
     `;
-
     nameContact.innerHTML += `${name}`;
-
     return photographersHeader;
-    return nameContact;
   }
-
-  return { name, picture, id, city, country, tagline, getUserCardDOM2 };
+  return {
+    name, picture, id, city, country, tagline, getUserCardDOM2,
+  };
 }

@@ -1,62 +1,56 @@
-
-let previousChoice; 
+let previousChoice;
 
 const ouvreTri = document.querySelector('.ouvreTri');
 const selectTri = document.querySelector('#selectTris');
 const fermeTri = document.querySelector('.fa-chevron-up');
 
-ouvreTri.addEventListener('click', function openTri() {
-  selectTri.style.display = "block";
-  ouvreTri.style.display = "none";
-});
+function openTri() {
+  selectTri.style.display = 'block';
+  ouvreTri.style.display = 'none';
+}
 
-fermeTri.addEventListener('click', function openTri() {
-  selectTri.style.display = "none";
-  ouvreTri.style.display = "flex";
-});
+function closeTri() {
+  selectTri.style.display = 'none';
+  ouvreTri.style.display = 'flex';
+}
 
+ouvreTri.addEventListener('click', openTri);
 
-//KEYPRESS//
-ouvreTri.addEventListener('keypress', event => {
-  if (event.code == 'Enter') {
-    selectTri.style.display = "block";
-    ouvreTri.style.display = "none";
+fermeTri.addEventListener('click', closeTri);
+
+// KEYPRESS //
+ouvreTri.addEventListener('keypress', (event) => {
+  if (event.code === 'Enter') {
+    openTri();
   }
 });
 
-fermeTri.addEventListener('keypress', event => {
-  if (event.code == 'Enter') {
-    selectTri.style.display = "none";
-    ouvreTri.style.display = "flex";
+fermeTri.addEventListener('keypress', (event) => {
+  if (event.code === 'Enter') {
+    closeTri();
   }
 });
 
-
-function clickTri(motcle, data ){
-
-  if(previousChoice === motcle){
-    return 
+function clickTri(motcle, data) {
+  if (previousChoice === motcle) {
+    return;
   }
 
   if (motcle === 'popularite') {
-    previousChoice = motcle; 
-    const resultLikes = data.sort(function (a, b) {
-      return a.likes - b.likes;
-    });
-    
+    previousChoice = motcle;
+    const resultLikes = data.sort((a, b) => a.likes - b.likes);
     displayMedias(resultLikes);
-  }
-  else if (motcle === 'date') {
-    previousChoice = motcle; 
-    const resultDate = data.sort(function (a, b) {
-      let dateA = new Date(a.date), dateB = new Date(b.date);
+  } else if (motcle === 'date') {
+    previousChoice = motcle;
+    const resultDate = data.sort((a, b) => {
+      let dateA = new Date(a.date);
+      let dateB = new Date(b.date);
       return dateA - dateB;
     });
-    
+
     displayMedias(resultDate);
-  }
-  else if (motcle === 'titre') {
-    previousChoice = motcle; 
+  } else if (motcle === 'titre') {
+    previousChoice = motcle;
 
     const resultTitle = data.sort((a, b) => {
       if (a.title < b.title) {
@@ -67,13 +61,9 @@ function clickTri(motcle, data ){
       }
       return 0;
     });
-    
+
     displayMedias(resultTitle);
-  }
-  else {
-    displayMedias(data); 
-    
+  } else {
+    displayMedias(data);
   }
 }
-
-

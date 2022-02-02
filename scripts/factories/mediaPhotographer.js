@@ -1,20 +1,19 @@
-/* eslint-disable linebreak-style */
-
 function mediaFactory(data) {
-
-  const { title, likes, id, date, image, video } = data;
+  const {
+    title, likes, id, date, image, video,
+  } = data;
   const picture = `assets/medias/${image}`;
   const pictureVideo = `assets/medias/${video}`;
   function ImageOuVideo() {
     if (data.image) {
       return `
       <img class="imgPhoto" src="${picture}" alt="${title}" data-type="photo" data-title="${title}" class="sourceLightbox"></img>`;
-    } 
-      return `
+    }
+    return `
       <video class="imgPhoto" src="${pictureVideo}" alt="${title}" data-type="video" data-title="${title}" >
         <source src="${pictureVideo}" type="video/mp4" class="sourceLightbox" data-title="${title}" data-type="video">
       </video>`;
-    }
+  }
   function getUserCardDOM3() {
     const mediasPhotographer = document.createElement('div');
     mediasPhotographer.innerHTML += `
@@ -35,6 +34,7 @@ function mediaFactory(data) {
     return mediasPhotographer;
   }
 
-  return { title, likes, id, date, image, getUserCardDOM3 };
-  
+  return {
+    title, likes, id, date, image, getUserCardDOM3,
+  };
 }
