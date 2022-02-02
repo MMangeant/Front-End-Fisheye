@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const modal = document.getElementById('contact_modal');
 const modal_btn = document.getElementById('send_button');
 const modal_contenu = document.querySelector('.modal');
