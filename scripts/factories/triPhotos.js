@@ -1,8 +1,4 @@
-// function trierMedias(){
-//   let clickTri = document.querySelector('#selectTris').addEventListener('change', clickTri(motcle, data))
-//   console.log(clickTri);
 
-// }
 let previousChoice; 
 
 const ouvreTri = document.querySelector('.ouvreTri');
@@ -37,20 +33,13 @@ fermeTri.addEventListener('keypress', event => {
 
 
 function clickTri(motcle, data ){
-  // console.log(motcle.target.id, ' popularite');
-  // console.log(data);
-
-  console.log('exter : ',previousChoice);
 
   if(previousChoice === motcle){
-    console.log('meme element clicker');
     return 
   }
-  console.log(previousChoice);
+
   if (motcle === 'popularite') {
     previousChoice = motcle; 
-  console.log('a linterieur : ',previousChoice);
-
     const resultLikes = data.sort(function (a, b) {
       return a.likes - b.likes;
     });
@@ -59,8 +48,6 @@ function clickTri(motcle, data ){
   }
   else if (motcle === 'date') {
     previousChoice = motcle; 
-    console.log('a linterieur : ',previousChoice);
-
     const resultDate = data.sort(function (a, b) {
       let dateA = new Date(a.date), dateB = new Date(b.date);
       return dateA - dateB;
@@ -84,9 +71,7 @@ function clickTri(motcle, data ){
     displayMedias(resultTitle);
   }
   else {
-    displayMedias(data); //affiche les medias
-    console.log('else')
-    // console.log(motcle)
+    displayMedias(data); 
     
   }
 }

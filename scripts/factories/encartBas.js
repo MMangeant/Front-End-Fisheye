@@ -1,13 +1,7 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-// eslint-disable-next-line no-unused-vars
-
-// eslint-disable-next-line no-unused-vars
 function encartBasFactory(data) {
-  // eslint-disable-next-line object-curly-newline
   const { id, photographerId, likes, price } = data;
 
-  /* let addLikes =  */[...document.querySelectorAll('.nbLikes')].forEach(like =>{ sommeLikes += Number(like.innerHTML) });
+  [...document.querySelectorAll('.nbLikes')].forEach(like =>{ sommeLikes += Number(like.innerHTML) });
 
   function getUserCardDOM4() {
     encartBas.innerHTML += `
@@ -19,6 +13,6 @@ function encartBasFactory(data) {
     `;
     return encartBas;
   }
-  // eslint-disable-next-line object-curly-newline
+  
   return { id, photographerId, likes, price, getUserCardDOM4 };
 }

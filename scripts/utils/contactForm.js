@@ -12,12 +12,11 @@ modal_btn.addEventListener('click', function(e) {
   closeModal();
 })
 
-// eslint-disable-next-line no-unused-vars
 function displayModal() {
   modal.style.display = 'block';
   modal_contenu.focus();
 }
-// eslint-disable-next-line no-unused-vars
+
 function closeModal() {
   modal.style.display = 'none';
 }

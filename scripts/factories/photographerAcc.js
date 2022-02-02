@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
+
 function photographerFactory(data) {
-  // eslint-disable-next-line object-curly-newline
+
   const { name, id, city, country, tagline, price, portrait } = data;
   const picture = `assets/photographers/${portrait}`;
 
@@ -20,6 +19,6 @@ function photographerFactory(data) {
         `;
     return (articlePhotograph);
   }
-  // eslint-disable-next-line object-curly-newline
+
   return { name, picture, id, city, country, tagline, price, getUserCardDOM };
 }

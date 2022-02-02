@@ -11,30 +11,20 @@ let idMediaCurrent;
 let photoLightbox;
 let videoLightbox;
 
-// document.addEventListener('keyup',function (e){
-//   if(e.which == 13){
-//     return lightbox(e.target)
-//   }
-// })
-
 function lightbox(param) {
 
   document.addEventListener('keyup',function (e){
     if(e.which == 37){
-      console.log('flèche G');
       return previousIMG()
     }
     if(e.which == 39){
-      console.log('flèche D');
       return nextIMG()
     }
     if(e.which == 27){
-      console.log('close');
       return closeLightbox();
     }
-    // console.log('keyup ', e);
   })
-  // console.log(param);
+
   const lightbox = document.querySelector('.lightbox');
   const contLightbox = document.querySelector('.lightbox__container');
   let mediaLightbox = document.querySelector('.lightbox__container img ,.lightbox__container video source');
@@ -53,8 +43,6 @@ function lightbox(param) {
     nextIMG();
   }
   else{
-
-    // contLightbox.focus();
     
     let mediaClicked= param.querySelector("img,video source");
     mediaCurrent = mediaClicked;
@@ -99,14 +87,10 @@ function lightbox(param) {
   }
 
   function previousIMG(){
-    console.log('youyo');
     idMediaCurrent = allImgsTable.indexOf(mediaCurrent)-1;
-    console.log(idMediaCurrent);
     mediaCurrent = allImgsTable[idMediaCurrent];
-    console.log(allImgsTable);
 
     if(mediaCurrent.dataset.type === 'photo'){
-      console.log('phto');
       contLightbox.innerHTML = `
         <img class="lightbox__photo" src="" alt="">
       `;
@@ -114,7 +98,6 @@ function lightbox(param) {
       mediaLightbox = photoLightbox;
     }
     else{
-      console.log('vid');
       contLightbox.innerHTML = `
         <video  class="lightbox__video" autoplay width="250">
           <source src="" type="video/mp4">
@@ -142,7 +125,6 @@ function lightbox(param) {
     mediaCurrent = allImgsTable[idMediaCurrent];
 
     if(mediaCurrent.dataset.type === 'photo'){
-      console.log('phto');
       contLightbox.innerHTML = `
         <img class="lightbox__photo" src="" alt="">
       `;
@@ -150,7 +132,6 @@ function lightbox(param) {
       mediaLightbox = photoLightbox;
     }
     else{
-      console.log('vid');
       contLightbox.innerHTML = `
         <video  class="lightbox__video" autoplay width="250">
           <source src="" type="video/mp4">

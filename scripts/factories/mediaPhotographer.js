@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
-// eslint-disable-next-line no-unused-vars
+
 function mediaFactory(data) {
-  // eslint-disable-next-line object-curly-newline
+
   const { title, likes, id, date, image, video } = data;
   const picture = `assets/medias/${image}`;
   const pictureVideo = `assets/medias/${video}`;
@@ -34,7 +34,7 @@ function mediaFactory(data) {
 
     return mediasPhotographer;
   }
-  // eslint-disable-next-line object-curly-newline
+
   return { title, likes, id, date, image, getUserCardDOM3 };
   
 }

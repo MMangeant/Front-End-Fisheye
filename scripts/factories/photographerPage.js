@@ -1,8 +1,6 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+
 function photographerPageFactory(data) {
-  // eslint-disable-next-line object-curly-newline
+
   const { name, id, city, country, tagline, portrait } = data;
   const picture = `assets/photographers/${portrait}`;
   function getUserCardDOM2() {
@@ -24,6 +22,6 @@ function photographerPageFactory(data) {
     return photographersHeader;
     return nameContact;
   }
-  // eslint-disable-next-line object-curly-newline
+
   return { name, picture, id, city, country, tagline, getUserCardDOM2 };
 }
