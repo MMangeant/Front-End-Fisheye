@@ -1,3 +1,5 @@
+// Fonction factory de l'encart fixe en bas //
+
 function encartBasFactory(data) {
   const {
     id, photographerId, likes, price,

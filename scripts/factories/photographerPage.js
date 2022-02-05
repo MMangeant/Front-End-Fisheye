@@ -1,3 +1,5 @@
+// Fonction factory de l'entête infos des photographes //
+
 function photographerPageFactory(data) {
   const {
     name, id, city, country, tagline, portrait,

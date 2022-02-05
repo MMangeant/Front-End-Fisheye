@@ -1,3 +1,5 @@
+// Fonction factory de l'encart des photographes sur l'accueil //
+
 function photographerFactory(data) {
   const {
     name, id, city, country, tagline, price, portrait,

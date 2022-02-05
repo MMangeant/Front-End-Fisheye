@@ -1,3 +1,5 @@
+// Fonction factory de l'encart des médias //
+
 function mediaFactory(data) {
   const {
     title, likes, id, date, image, video,

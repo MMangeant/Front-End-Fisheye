@@ -1,3 +1,5 @@
+// Récupération des données du JSON //
+
 async function getDataJson() {
   return fetch('./data/photographers.json')
     .then((res) => res.json());

@@ -1,3 +1,4 @@
+// Fonction pour afficher les encarts de photographes sur l'accueil //
 async function displayData(photographers) {
   photographers.forEach((photographer) => {
     const photographerModel = photographerFactory(photographer);
@@ -5,6 +6,7 @@ async function displayData(photographers) {
     photographersSection.appendChild(userCardDOM);
   });
 }
+
 async function init() {
   const { photographers } = await getPhotographers();
   displayData(photographers);

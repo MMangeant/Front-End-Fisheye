@@ -106,6 +106,7 @@ function lightbox(param) {
     mediaLightbox.src = mediaCurrent.src;
     idMediaCurrent = allImgsTable.indexOf(mediaCurrent);
     allLightbox.style.display = 'block';
+    document.getElementById('focusLightbox').focus();
 
     if (idMediaCurrent == 0) {
       prevArrow.style.display = 'none';
@@ -113,8 +114,6 @@ function lightbox(param) {
     if (idMediaCurrent >= allImgsTable.length - 1) {
       nextArrow.style.display = 'none';
     }
-
-    document.getElementById('focusLightbox').focus();
   }
 
   document.addEventListener('keyup', (e) => {
