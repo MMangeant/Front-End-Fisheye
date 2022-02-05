@@ -17,6 +17,6 @@ modalBtn.addEventListener('click', (e) => {
 });
 
 modalBtn.addEventListener('blur', () => {
-  // console.log('sortie focus');
+  console.log('sortie focus');
   modalContenu.focus();
 });
