@@ -16,6 +16,7 @@ module.exports = {
     'linebreak-style': 'off',
     'prefer-const': 'off',
     'no-plusplus': 'off',
+    'no-console': 'off',
     eqeqeq: 'off',
   },
 };
