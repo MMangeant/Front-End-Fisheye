@@ -23,9 +23,8 @@ async function displayMedias(medias) {
 }
 
 async function displayEncartBas(photographers) {
-  const encartBas = document.querySelector('.encart-bas');
   photographers.forEach((photographer) => {
-    const encartModel = encartBasFactory(photographer); 
+    const encartModel = encartBasFactory(photographer);
     const userCardDOM4 = encartModel.getUserCardDOM4();
   });
 }
@@ -35,20 +34,14 @@ async function initPage() {
   const { photographers, media } = await getPhotographers();
 
   let photographersTries = photographers.filter((photographer) => photographer.id == idUrl);
-  let mediasTries = media.filter((media) => media.photographerId == idUrl);
+  let mediasTries = media.filter((elt) => elt.photographerId == idUrl);
 
   displayDataPage(photographersTries);
   displayMedias(mediasTries);
   displayEncartBas(photographersTries, mediasTries);
-    
-    document.querySelectorAll('#selectTris li').forEach(li => li.addEventListener('click', e => clickTri(e.target.id, mediasTries)))
-    document.querySelectorAll('#selectTris li').forEach(li => li.addEventListener('keypress', e => clickTri(e.target.id, mediasTries)))
 
+  document.querySelectorAll('#selectTris li').forEach((li) => li.addEventListener('click', (e) => clickTri(e.target.id, mediasTries)));
+  document.querySelectorAll('#selectTris li').forEach((li) => li.addEventListener('keypress', (e) => clickTri(e.target.id, mediasTries)));
 }
 
 initPage();
-
-
-
-
-

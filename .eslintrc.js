@@ -15,5 +15,7 @@ module.exports = {
     'no-undef': 'off',
     'linebreak-style': 'off',
     'prefer-const': 'off',
+    'no-plusplus': 'off',
+    eqeqeq: 'off',
   },
 };
