@@ -20,15 +20,15 @@ function mediaFactory(data) {
     const mediasPhotographer = document.createElement('div');
     mediasPhotographer.innerHTML += `
       <div class="encartPhoto" data-likes="${likes}" data-title="${title}" data-date="${date}">
-        <div onclick="lightbox(this)" onKeyUp="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre lightbox">
+        <div onclick="lightbox(this)" onKeyUp="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre la vue lightbox">
           ${ImageOuVideo()}
         </div>
         <div class="textPhoto">
-          <h3 class="nomPhoto" tabindex="0">${title}</h3>
-            <button class="likesPhoto" data-idmedia="${id}" data-likes="${likes}">
-              <span class="nbLikes nb${id}">${likes}</span>
-              <img class="heart heart-likes" src="assets/icons/heart.svg" alt="" data-likes="${likes}" data-idmedia="${id}" onclick="calculCoeur(${id})">
-            </button>
+          <h3 class="nomPhoto" tabindex="0" aria-label="${title}" role="text">${title}</h3>
+          <button class="likesPhoto" data-idmedia="${id}" data-likes="${likes}" role="image" aria-label="likes">
+            <span class="nbLikes nb${id}">${likes}</span>
+            <img class="heart heart-likes" src="assets/icons/heart.svg" alt="" data-likes="${likes}" data-idmedia="${id}" onclick="calculCoeur(${id})">
+          </button>
         </div>
       </div>
     `;

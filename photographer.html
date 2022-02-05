@@ -16,65 +16,65 @@
     </header>
     <main id="main">
       <div class="photograph-header"></div>
-
-      
       <div class="triPhotos">
-        <div class="trierPar" role="Input label" tabindex="0">Trier par </div>
+        <div class="trierPar" role="Input label" tabindex="0" id="label-tri">Trier par </div>
         <div class="dropDown" >
-          <div class="ouvreTri" aria-label="ouvre menu déroulant de tri" tabindex="0">
+          <div class="ouvreTri" aria-label="ouvre menu déroulant de tri" tabindex="0" role="select menu">
             . . .
             <i class="fas fa-chevron-down"></i>
           </div>
-          <ul name="" id="selectTris">
-            <li id="popularite" aria-label="tri par popularité" tabindex="0">Popularité <i class="fas fa-chevron-up" tabindex="0"></i></li>
-            <li id="date" aria-label="tri par date" tabindex="0">Date</li>
-            <li id="titre"  aria-label="tri par titre" tabindex="0">Titre</li>
+          <ul name="" id="selectTris" aria-label="listbox" aria-labelledby="label-tri" aria-haspopup="listbox" role="listbox">
+            <li id="popularite" aria-label="tri par popularité" tabindex="0" aria-labelledby="label-tri" role="listbox option">Popularité <i class="fas fa-chevron-up" tabindex="0"></i></li>
+            <li id="date" aria-label="tri par date" tabindex="0" aria-labelledby="label-tri" role="listbox option">Date</li>
+            <li id="titre"  aria-label="tri par titre" tabindex="0" aria-labelledby="label-tri" role="listbox option">Titre</li>
           </ul>
         </div>
       </div>
       
       <div class="photograph-medias"></div>
 
-      <div class="encart-bas"></div>
+      <aside class="encart-bas"></aside>
 
-      <div class="lightbox" autofocus>
-        <button class="lightbox__close" onclick="lightbox('close')"  tabindex="0" aria-label="fermer la lightbox" id='focusLightbox'></button>
-        <button class="lightbox__prev" onclick="lightbox('prev')"  tabindex="0" aria-label="média précédent"></button>
-        <button class="lightbox__next" onclick="lightbox('next')"  tabindex="0" aria-label="média suivant"></button>
-        <div class="lightbox__container" tabindex="0" >
+      <div class="lightbox" autofocus role="dialog" aria-label="image closeup view">
+        <button class="lightbox__close" onclick="lightbox('close')" tabindex="0" aria-label="fermer la lightbox" id='focusLightbox' role="button"></button>
+        <button class="lightbox__prev" onclick="lightbox('prev')" tabindex="0" aria-label="média précédent" role="link"></button>
+        <button class="lightbox__next" onclick="lightbox('next')" tabindex="0" aria-label="média suivant" role="link"></button>
+        <div class="lightbox__container" tabindex="0" role="image">
         </div>
-        <h3 class="lightbox__title" tabindex="0" alt=""></h3>
+        <h3 class="lightbox__title" tabindex="0" alt="" role="text"></h3>
       </div>
 
     </main>
-    <div id="contact_modal" role="dialog" aria-labelledby="contact_form">
+
+    <div id="contact_modal" role="dialog" aria-labelledby="contact_titre">
 			<div class="modal" tabindex="0">
-				<header id="focusModal">
+				<header id="contact_titre" role="heading">
           <h2 aria-label="contactez-moi" tabindex="0">Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" onKeyPress="if (event.keyCode == 13) closeModal()" id="closeModal" title="fermeture" alt="bouton fermeture modale" aria-label="bouton fermeture modale" tabindex="0"/>
         </header>
         <h2 id="contact_name" tabindex="0"></h2>
 				<form name="contact_form" id="contact_form">
 					<div>
-						<label aria-label="prénom" tabindex="0">Prénom</label>
-						<input class="text-control" type="text" id="first" name="prénom" tabindex="0"/><br>
+						<label aria-label="prénom" role="label" tabindex="0" id="prenom">Prénom</label>
+						<input class="text-control"  role="text-field" type="text" id="first" name="prénom" tabindex="0" aria-labelledby="prenom"/><br>
 					</div>
           <div>
-            <label aria-label="nom" tabindex="0">Nom</label><br>
-            <input class="text-control" type="text" id="last" name="nom" tabindex="0"/><br>
+            <label aria-label="nom" role="label" tabindex="0" id="nom">Nom</label><br>
+            <input class="text-control"  role="text-field" type="text" id="last" name="nom" tabindex="0" aria-labelledby="nom"/><br>
           </div>
           <div>
-            <label aria-label="email" tabindex="0">Email</label><br>
-            <input class="text-control" id="email" name="email" tabindex="0"/><br>        
+            <label aria-label="email" role="label" tabindex="0" id="mail">Email</label><br>
+            <input class="text-control" role="text-field" id="email" name="email" tabindex="0" aria-labelledby="mail"/><br>        
           </div>
           <div>
-            <label aria-label="message" tabindex="0">Votre message</label><br>
-            <textarea id="message" name="message" tabindex="0"></textarea><br>
+            <label aria-label="message" role="label" tabindex="0" id="message">Votre message</label><br>
+            <textarea id="message" role="text-field" name="message" tabindex="0" aria-labelledby="message"></textarea><br>
           </div>
           <button id="send_button" aria-label="envoyer" tabindex="0">Envoyer</button>
 				</form>
 			</div>
 		</div>
+
     <script src="scripts/app.js"></script>
     <script src="scripts/variables.js"></script>
     <script src="scripts/pages/photographer.js"></script>

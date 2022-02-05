@@ -23,13 +23,13 @@ function lightbox(param) {
     // Condition pour le code différent selon si c'est une image ou une vidéo
     if (mediaCurrent.dataset.type === 'photo') {
       contLightbox.innerHTML = `
-        <img class="lightbox__photo" src="" alt="">
+        <img class="lightbox__photo" src="" alt="${allImgsTable[idMediaCurrent].dataset.title}">
       `;
       photoLightbox = document.querySelector('.lightbox__photo');
       mediaLightbox = photoLightbox;
     } else {
       contLightbox.innerHTML = `
-        <video  class="lightbox__video" autoplay width="250">
+        <video  class="lightbox__video" autoplay width="250" tabindex="0" aria-label="${allImgsTable[idMediaCurrent].dataset.title}">
           <source src="" type="video/mp4">
         </video>
       `;
@@ -60,13 +60,13 @@ function lightbox(param) {
     // Condition pour le code différent selon si c'est une image ou une vidéo
     if (mediaCurrent.dataset.type === 'photo') {
       contLightbox.innerHTML = `
-        <img class="lightbox__photo" src="" alt="">
+        <img class="lightbox__photo" src="" alt="${allImgsTable[idMediaCurrent].dataset.title}">
       `;
       photoLightbox = document.querySelector('.lightbox__photo');
       mediaLightbox = photoLightbox;
     } else {
       contLightbox.innerHTML = `
-        <video  class="lightbox__video" autoplay width="250">
+        <video  class="lightbox__video" autoplay width="250" tabindex="0" aria-label="${allImgsTable[idMediaCurrent].dataset.title}">
           <source src="" type="video/mp4">
         </video>
       `;
@@ -102,13 +102,13 @@ function lightbox(param) {
     // Condition pour le code différent selon si c'est une image ou une vidéo
     if (mediaCurrent.dataset.type === 'photo') {
       contLightbox.innerHTML = `
-        <img class="lightbox__photo" src="" alt="" tabindex="0">
+        <img class="lightbox__photo" src="" alt="${mediaCurrent.dataset.title}" tabindex="0">
       `;
       photoLightbox = document.querySelector('.lightbox__photo');
       mediaLightbox = photoLightbox;
     } else {
       contLightbox.innerHTML = `
-        <video  class="lightbox__video" autoplay width="250" tabindex="0">
+        <video  class="lightbox__video" autoplay width="250" tabindex="0" aria-label="${mediaCurrent.dataset.title}">
           <source src="" type="video/mp4">
         </video>
       `;
@@ -119,6 +119,7 @@ function lightbox(param) {
     titleLightbox.innerHTML += mediaCurrent.dataset.title;
     mediaLightbox.src = mediaCurrent.src;
     idMediaCurrent = allImgsTable.indexOf(mediaCurrent);
+    console.log(mediaCurrent.dataset.title);
     allLightbox.style.display = 'block';
     document.getElementById('focusLightbox').focus();
 

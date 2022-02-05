@@ -9,11 +9,11 @@ function photographerFactory(data) {
   function getUserCardDOM() {
     const articlePhotograph = document.createElement('article');
     articlePhotograph.innerHTML += `
-        <a class="lienPhotographer" href="photographer.html?id=${id}" target="_blank" alt="" aria-label="${name}">
+        <a class="lienPhotographer" href="photographer.html?id=${id}" target="_blank" alt="" aria-label="${name}" role="link">
             <img class="portraitPhotographer" src="${picture}" alt="${name}" tabindex="0">
             <h2 class="namePhotographer" tabindex="0">${name}</h2>
         </a>
-        <div class="textPhotographer">
+        <div class="textPhotographer" role="text paragraph">
             <h3 class="adressePhotographer" tabindex="0">${city}, ${country}</h3>
             <p class="taglinePhotographer" tabindex="0">${tagline}</p>
             <p class="pricePhotographer" tabindex="0">${price}€/jour</p>

@@ -8,10 +8,10 @@ function encartBasFactory(data) {
   function getUserCardDOM4() {
     encartBas.innerHTML += `
       <div tabindex="0">
-        <span class="totalLikes" tabindex="0">${sommeLikes}</span>
+        <span class="totalLikes" tabindex="0" role="text">${sommeLikes}</span>
         <img class="heart" src="./assets/icons/heart-noir.svg" alt="">
       </div>
-      <div tabindex="0">${price}€/jour</div>
+      <div tabindex="0" role="text">${price}€/jour</div>
     `;
     return encartBas;
   }
