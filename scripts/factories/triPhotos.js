@@ -1,9 +1,3 @@
-let previousChoice;
-
-const ouvreTri = document.querySelector('.ouvreTri');
-const selectTri = document.querySelector('#selectTris');
-const fermeTri = document.querySelector('.fa-chevron-up');
-
 function openTri() {
   selectTri.style.display = 'block';
   ouvreTri.style.display = 'none';

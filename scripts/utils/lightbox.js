@@ -1,18 +1,4 @@
-const prevArrow = document.querySelector('.lightbox__prev');
-const nextArrow = document.querySelector('.lightbox__next');
-const crossLightbox = document.querySelector('.lightbox__close');
-
-const titleLightbox = document.querySelector('.lightbox__title');
-
-let mediaCurrent;
-let idMediaCurrent;
-
-let photoLightbox;
-let videoLightbox;
-
 function lightbox(param) {
-  const allLightbox = document.querySelector('.lightbox');
-  const contLightbox = document.querySelector('.lightbox__container');
   let mediaLightbox = document.querySelector('.lightbox__container img ,.lightbox__container video source');
 
   const allImgsTable = Array.from(document.querySelectorAll('.container-img img,.container-img video source'));
