@@ -119,7 +119,6 @@ function lightbox(param) {
     titleLightbox.innerHTML += mediaCurrent.dataset.title;
     mediaLightbox.src = mediaCurrent.src;
     idMediaCurrent = allImgsTable.indexOf(mediaCurrent);
-    console.log(mediaCurrent.dataset.title);
     allLightbox.style.display = 'block';
     document.getElementById('focusLightbox').focus();
 
