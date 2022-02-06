@@ -17,7 +17,7 @@ function mediaFactory(data) {
       </video>`;
   }
   function getUserCardDOM3() {
-    const mediasPhotographer = document.createElement('div');
+    const mediasPhotographer = document.createElement('article');
     mediasPhotographer.innerHTML += `
       <div class="encartPhoto" data-likes="${likes}" data-title="${title}" data-date="${date}">
         <div onclick="lightbox(this)" onKeyUp="if (event.keyCode == 13) lightbox(this)" class="container-img" alt="${title}" data-idmedia="${id}" tabindex="0" role="image link" aria-label="ouvre la vue lightbox">

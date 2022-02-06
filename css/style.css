@@ -207,14 +207,14 @@ form textarea {
   gap: 30px 70px;
   margin-top: 25px;
 }
-.photograph-medias > div {
+.photograph-medias article {
   display: flex;
 }
-.photograph-medias > div .container-img {
+.photograph-medias article .container-img {
   position: relative;
   cursor: pointer;
 }
-.photograph-medias > div .container-img img, .photograph-medias > div .container-img video {
+.photograph-medias article .container-img img, .photograph-medias article .container-img video {
   width: 100%;
   height: 300px;
   border-radius: 5px;
@@ -222,11 +222,11 @@ form textarea {
   transition: all 0.4s ease-in-out;
   margin-bottom: -5px;
 }
-.photograph-medias > div .container-img img:hover, .photograph-medias > div .container-img video:hover {
+.photograph-medias article .container-img img:hover, .photograph-medias article .container-img video:hover {
   transform: scale(0.98);
   transition: all 0.4s ease-in-out;
 }
-.photograph-medias > div .container-img img:before, .photograph-medias > div .container-img video:before {
+.photograph-medias article .container-img img:before, .photograph-medias article .container-img video:before {
   content: "";
   background-color: #901c1c;
   width: 100%;
@@ -236,13 +236,13 @@ form textarea {
   mix-blend-mode: hue;
   border-radius: 5px;
 }
-.photograph-medias > div .textPhoto {
+.photograph-medias article .textPhoto {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #901c1c;
 }
-.photograph-medias > div .likesPhoto {
+.photograph-medias article .likesPhoto {
   margin: 0;
   display: flex;
   align-items: center;
@@ -253,30 +253,30 @@ form textarea {
   background: transparent;
   cursor: pointer;
 }
-.photograph-medias > div .likesPhoto .nbLikes {
+.photograph-medias article .likesPhoto .nbLikes {
   padding-right: 5px;
   right: 5px;
   font-size: 1.2em;
   font-weight: bold;
 }
-.photograph-medias > div .photosPhotograph {
+.photograph-medias article .photosPhotograph {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.photograph-medias > div .encartPhoto {
+.photograph-medias article .encartPhoto {
   width: 350px;
   margin: 15px auto;
   display: inline-block;
 }
-.photograph-medias > div .encartPhoto .heart {
+.photograph-medias article .encartPhoto .heart {
   transition: all 0.5s ease-in-out;
 }
-.photograph-medias > div .encartPhoto .heart:hover {
+.photograph-medias article .encartPhoto .heart:hover {
   transform: scale(1.3);
   transition: all 0.5s ease-in-out;
 }
-.photograph-medias > div .encartPhoto .heart:active {
+.photograph-medias article .encartPhoto .heart:active {
   opacity: 0.5;
   transform: scale(0.7);
 }
