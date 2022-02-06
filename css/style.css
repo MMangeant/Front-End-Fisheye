@@ -362,6 +362,10 @@ form textarea {
   align-items: baseline;
 }
 
+.chevron {
+  width: 20px;
+}
+
 /* LIGHTBOX */
 .lightbox {
   position: fixed;

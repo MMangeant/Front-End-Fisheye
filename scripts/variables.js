@@ -8,7 +8,7 @@ const nameContact = document.querySelector('#contact_name');
 let previousChoice;
 const ouvreTri = document.querySelector('.ouvreTri');
 const selectTri = document.querySelector('#selectTris');
-const fermeTri = document.querySelector('.fa-chevron-up');
+const fermeTri = document.querySelector('#chevron-up');
 
 // Variables lightbox //
 const prevArrow = document.querySelector('.lightbox__prev');
